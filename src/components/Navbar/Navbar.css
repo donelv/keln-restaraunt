@@ -1,0 +1,97 @@
+.mynavbar {
+  /*margin-top: 7rem*/
+  background-color: #e7cb86;
+  position: sticky;
+  top: 7rem;
+  height: 7rem;
+  width: 100%;
+  z-index: 1000;
+}
+
+.mynavbar-wrap {
+  height: 100%;
+  width: auto;
+  text-align: center;
+  position: relative;
+}
+/*
+.mynavbar-with-scroll {
+  /*height: 3rem;*/
+/*overflow-x: scroll;*/
+/*overflow-x: scroll;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;//
+  display: flex;
+  list-style: none;
+  overflow-x: scroll;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  scrollbar-width: none;
+}
+.mynavbar-with-scroll ul {
+  //display: inline;//
+  white-space: nowrap;
+  position: relative;
+}
+.mynavbar-with-scroll::-webkit-scrollbar {
+  display: none;
+}
+.mynavbar-with-scroll li {
+  display: inline-block;
+  margin-right: 2rem;
+  font-family: 'GothicRus', sans-serif;
+  font-size: 2rem;
+  color: #9b8858;
+}
+*/
+.mynavbar-wrap ul {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding-right: 15rem;
+  padding-left: 15rem;
+}
+.mynavbar-wrap .mynavbar_item {
+  display: inline-block;
+  margin-right: 2rem;
+  font-family: 'GothicRus', sans-serif;
+  font-size: 2rem;
+  color: #9b8858;
+}
+.mynavbar-wrap li .active {
+  color: black;
+  text-decoration: none;
+}
+.mynavbar-wrap li:hover {
+  color: #ffffff;
+  cursor: pointer;
+}
+@media (max-width: 1003px) {
+  .mynavbar {
+    height: 4rem;
+  }
+  .mynavbar-wrap {
+    display: flex;
+    list-style: none;
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+    /*-ms-overflow-style: -ms-autohiding-scrollbar;*/
+    scrollbar-width: none;
+  }
+  .mynavbar--wrap::-webkit-scrollbar {
+    display: none;
+  }
+  .mynavbar-wrap ul {
+    white-space: nowrap;
+    position: relative;
+    padding-left: 3rem;
+    padding-right: 0;
+  }
+  .mynavbar-wrap li {
+    display: inline-block;
+    margin-right: 2rem;
+    font-family: 'GothicRus', sans-serif;
+    font-size: 2rem;
+    color: #9b8858;
+  }
+}

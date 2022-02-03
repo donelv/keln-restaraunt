@@ -1,0 +1,105 @@
+.header {
+  background-color: #eaeaea;
+  position: sticky;
+  top: 0px;
+  height: 7rem;
+  width: 100%;
+  z-index: 1000;
+}
+.header-wrap {
+  height: 7rem;
+  position: relative;
+}
+.header-logo {
+  position: absolute;
+  padding-left: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.header-logo img {
+  height: 6rem;
+}
+.header-logo-mobile {
+  display: none;
+}
+.header-page {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-family: 'GothicRus', sans-serif;
+  font-size: 2.8rem;
+}
+.header .search {
+  position: absolute;
+  right: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.header .search li {
+  display: inline-block;
+  list-style: none;
+  margin-left: 1rem;
+}
+.header .search li p {
+  margin-bottom: -0.8rem;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+  display: inline-block;
+  text-decoration: none;
+  font-family: 'Montserrat-Regular', sans-serif;
+  font-size: 1.6rem;
+  color: #000000;
+}
+.header .search img {
+  height: 2.6rem;
+}
+.header .search .cart {
+  position: relative;
+}
+.header .search-form {
+  position: relative;
+}
+.header .search-form-input {
+  background-color: #eaeaea;
+  height: 3rem;
+  border: 2px solid #000000;
+  border-radius: 0.5rem;
+  width: 21rem;
+  font-family: 'Montserrat-Regular', sans-serif;
+  font-size: 1.6rem;
+  padding-left: 1rem;
+  padding-right: 2.5rem;
+
+  vertical-align: middle;
+}
+.header .search-form-cancel {
+  position: absolute;
+  height: 3rem;
+  border: none;
+  background-color: transparent;
+  right: 14%;
+  appearance: none;
+}
+.header .search-form-cancel img {
+  height: 60%;
+}
+.header .search-form-button {
+  padding: 0;
+  margin: auto 0;
+  border: none;
+  background-color: transparent;
+  appearance: none;
+}
+.header .search--active .price,
+.header .search--active .cart,
+.header .search--active .liked {
+  display: none;
+}
+.header .search--active .search-form-input {
+  display: inline-block;
+}
+.header .search--active .search-form-cancel {
+  display: inline-block;
+}

@@ -1,0 +1,17 @@
+.empty-cart {
+  text-align: center;
+  font-family: 'Montserrat-Regular', sans-serif;
+  font-size: 1.8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: calc(100vh - 26rem);
+  width: fit-content;
+  margin: 0 auto;
+}
+.empty-cart__link {
+  color: black;
+}
+.empty-cart__link:hover {
+  color: white;
+}

@@ -1,0 +1,228 @@
+{
+  "salads": [
+    { "categoryId": "1", "categoryName": "Салаты" },
+    {
+      "id": "1",
+      "name": "Леберхаус",
+      "price": "395",
+      "weight": "260",
+      "description": "куриная печень, черри, перепелиное яйцо, кедровые орехи, апельсины, листья салата, винный соус",
+      "img": "img/food/leberhause.jpg",
+      "delivery": true
+    },
+    {
+      "id": "2",
+      "name": "Фишинген",
+      "price": "635",
+      "weight": "240",
+      "description": "семга, авокадо, струч. фасоль, черри, кедровый орех, листья салата, горчичный соус",
+      "img": "img/food/fishingen.jpg",
+      "delivery": false,
+      "type": "salad"
+    },
+    {
+      "id": "3",
+      "name": "Греческий",
+      "price": "320",
+      "weight": "270",
+      "description": "томаты, болгарский перец, огурец, фета, орегано",
+      "img": "img/food/grecheskiy.jpg",
+      "delivery": true,
+      "type": "salad"
+    },
+    {
+      "id": "4",
+      "name": "Кёльн",
+      "price": "430",
+      "weight": "310",
+      "description": "свиная шея, томаты, болгарский перец, обжаренный баклажан, корнишоны, чесночная заправка",
+      "img": "img/food/keln.jpg",
+      "delivery": true,
+      "type": "salad"
+    },
+    {
+      "id": "5",
+      "name": "Кёльн",
+      "price": "430",
+      "weight": "310",
+      "description": "свиная шея, томаты, болгарский перец, обжаренный баклажан, корнишоны, чесночная заправка",
+      "img": "img/food/keln.jpg",
+      "delivery": false,
+      "type": "salad"
+    }
+  ],
+  "coldSnacks": [
+    { "categoryId": "2", "categoryName": "Холодные закуски" },
+    {
+      "id": "6",
+      "name": "Мясное плато",
+      "price": "720",
+      "weight": "425",
+      "description": "ростбиф, буженина, куриная пастрома, куриный паштет собственного приготовления",
+      "img": "img/food/leberhause.jpg",
+      "delivery": true
+    },
+    {
+      "id": "7",
+      "name": "Рыбное ассорти",
+      "price": "980",
+      "weight": "310",
+      "description": "малосольный муксун и семга",
+      "img": "img/food/leberhause.jpg",
+      "delivery": true
+    },
+    {
+      "id": "8",
+      "name": "Сырная тарелка",
+      "price": "530",
+      "weight": "420",
+      "description": "пармезан, чеддер, эдамер, сулугуни копченый, мед, грецкие орехи, виноград",
+      "img": "img/food/leberhause.jpg",
+      "delivery": true
+    },
+    {
+      "id": "9",
+      "name": "Ассорти из шпика",
+      "price": "580",
+      "weight": "395",
+      "description": "",
+      "img": "img/food/leberhause.jpg",
+      "delivery": true
+    }
+  ],
+  "hotSnacks": [
+    { "categoryId": "3", "categoryName": "Горячие закуски" },
+    {
+      "id": "10",
+      "name": "Пивная тарелка на компанию 'Бюргер'",
+      "price": "1155",
+      "weight": "1000",
+      "description": "куриные крылья, креветки жареные, чесночные гренки, картофель фри, соус блю-чиз, соус айоли, горчица, брецель",
+      "img": "img/food/leberhause.jpg",
+      "delivery": true
+    },
+    {
+      "id": "11",
+      "name": "Пивная тарелка на компанию 'Бисмарк'",
+      "price": "990",
+      "weight": "760",
+      "description": "луковые кольца, кольца кальмара, креветки Панко, чесночные гренки, соус кимчи, соус айоли, соус цезарь",
+      "img": "img/food/leberhause.jpg",
+      "delivery": true
+    },
+    {
+      "id": "12",
+      "name": "Вальдорф",
+      "price": "350",
+      "weight": "250",
+      "description": "куриные сердечки и печень, обжарен. в специях, спаржа, томаты черри",
+      "img": "img/food/leberhause.jpg",
+      "delivery": true
+    },
+    {
+      "id": "13",
+      "name": "Мидии 'Саксония'",
+      "price": "870",
+      "weight": "250",
+      "description": "запеченные мидии с соусом песто, сыр",
+      "img": "img/food/leberhause.jpg",
+      "delivery": true
+    }
+  ],
+  "soups": [
+    { "categoryId": "4", "categoryName": "Супы" },
+    {
+      "id": "14",
+      "name": "Вальдорф",
+      "price": "350",
+      "weight": "250",
+      "description": "куриные сердечки и печень, обжарен. в специях, спаржа, томаты черри",
+      "img": "img/food/leberhause.jpg",
+      "delivery": true
+    }
+  ],
+  "garnish": [
+    { "categoryId": "5", "categoryName": "Гарниры" },
+    {
+      "id": "15",
+      "name": "Вальдорф",
+      "price": "350",
+      "weight": "250",
+      "description": "куриные сердечки и печень, обжарен. в специях, спаржа, томаты черри",
+      "img": "img/food/leberhause.jpg",
+      "delivery": true
+    }
+  ],
+  "desserts": [
+    { "categoryId": "6", "categoryName": "Десерты" },
+    {
+      "id": "16",
+      "name": "Вальдорф",
+      "price": "350",
+      "weight": "250",
+      "description": "куриные сердечки и печень, обжарен. в специях, спаржа, томаты черри",
+      "img": "img/food/leberhause.jpg",
+      "delivery": true
+    }
+  ],
+  "meatDishes": [
+    { "categoryId": "7", "categoryName": "Мясные блюда" },
+    {
+      "id": "17",
+      "name": "Вальдорф",
+      "price": "350",
+      "weight": "250",
+      "description": "куриные сердечки и печень, обжарен. в специях, спаржа, томаты черри",
+      "img": "img/food/leberhause.jpg",
+      "delivery": true
+    }
+  ],
+  "fishDishes": [
+    { "categoryId": "8", "categoryName": "Рыбные блюда" },
+    {
+      "id": "18",
+      "name": "Вальдорф",
+      "price": "350",
+      "weight": "250",
+      "description": "куриные сердечки и печень, обжарен. в специях, спаржа, томаты черри",
+      "img": "img/food/leberhause.jpg",
+      "delivery": true
+    }
+  ],
+  "steamedDishes": [
+    { "categoryId": "9", "categoryName": "Блюда на пару" },
+    {
+      "id": "19",
+      "name": "Вальдорф",
+      "price": "350",
+      "weight": "250",
+      "description": "куриные сердечки и печень, обжарен. в специях, спаржа, томаты черри",
+      "img": "img/food/leberhause.jpg",
+      "delivery": true
+    }
+  ],
+  "sausages": [
+    { "categoryId": "10", "categoryName": "Колбаски" },
+    {
+      "id": "12",
+      "name": "Вальдорф",
+      "price": "350",
+      "weight": "250",
+      "description": "куриные сердечки и печень, обжарен. в специях, спаржа, томаты черри",
+      "img": "img/food/leberhause.jpg",
+      "delivery": true
+    }
+  ],
+  "steaks": [
+    { "categoryId": "11", "categoryName": "Стейки" },
+    {
+      "id": "12",
+      "name": "Вальдорф",
+      "price": "350",
+      "weight": "250",
+      "description": "куриные сердечки и печень, обжарен. в специях, спаржа, томаты черри",
+      "img": "img/food/leberhause.jpg",
+      "delivery": true
+    }
+  ]
+}
