@@ -4,6 +4,7 @@
   justify-content: center;
   font-family: 'Montserrat-Medium', sans-serif;
   font-size: 1.6rem;
+  margin: auto;
 }
 .form__input {
   height: 5rem;
@@ -13,15 +14,19 @@
   background: #f6f6f6;
   padding-left: 2rem;
 }
+.form__input:focus {
+  outline: none;
+}
+.form__input::placeholder {
+  color: #bcbcbc;
+}
 .form__wrapper-input {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-row-gap: 1.5rem;
   grid-column-gap: 1.5rem;
 }
-.form__input-small {
-  /*width: 100%;*/
-}
+
 .form__button {
   width: 100%;
   height: 5rem;
