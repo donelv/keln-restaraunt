@@ -16,6 +16,7 @@
   border: none;
   background: #f6f6f6;
   padding-left: 2rem;
+  padding-top: 1rem;
 }
 .form__group .form__label {
   position: absolute;
@@ -30,13 +31,9 @@
 }
 .form__input:focus ~ .form__label,
 .form__input:valid ~ .form__label {
-  top: 0;
+  top: 0.2rem;
   font-size: 1.2rem;
   color: #909090;
-}
-
-.form__input::placeholder {
-  margin-bottom: 15px;
 }
 .form__wrapper-input {
   display: grid;
