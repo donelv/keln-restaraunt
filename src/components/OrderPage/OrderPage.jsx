@@ -8,7 +8,13 @@ const OrderPage = () => {
         <label className="form__label">Имя</label>
       </div>
       <div className="form__group">
-        <input className="form__input" spellCheck="false" required></input>
+        <input
+          className="form__input"
+          spellCheck="false"
+          required
+          type="tel"
+          pattern="+7([0-9]{3}) [0-9]{3}-[0-9]{2}-[0-9]{2}"
+        ></input>
         <label className="form__label">Телефон</label>
       </div>
       <div className="form__group">
