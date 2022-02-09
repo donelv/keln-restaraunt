@@ -6,6 +6,9 @@
   font-size: 1.6rem;
   margin: 2rem 1.5rem;
 }
+.form__group {
+  position: relative;
+}
 .form__input {
   height: 5rem;
   width: 100%;
@@ -14,11 +17,26 @@
   background: #f6f6f6;
   padding-left: 2rem;
 }
+.form__group .form__label {
+  position: absolute;
+  left: 2rem;
+  top: 1.4rem;
+  color: #bcbcbc;
+  pointer-events: none;
+  transition: 0.5s;
+}
 .form__input:focus {
   outline: none;
 }
+.form__input:focus ~ .form__label,
+.form__input:valid ~ .form__label {
+  top: 0;
+  font-size: 1.2rem;
+  color: #909090;
+}
+
 .form__input::placeholder {
-  color: #bcbcbc;
+  margin-bottom: 15px;
 }
 .form__wrapper-input {
   display: grid;
