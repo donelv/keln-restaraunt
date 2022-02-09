@@ -4,6 +4,7 @@ import Header from '../Header/Header'
 import CartItemContainer from '../CartItem/CartItemContainer'
 import { connect } from 'react-redux'
 import EmptyCart from '../EmptyCart/EmptyCart'
+import { Link } from 'react-router-dom'
 const Cart = (props) => {
   return (
     <div>
@@ -22,7 +23,7 @@ const Cart = (props) => {
               </div>
               <div className="col-xl-3 col-lg-4 col-6">
                 <button className="main-cart-order_button">
-                  Оформление заказа
+                  <Link to="/cart/order">Оформление заказа</Link>
                 </button>
               </div>
             </div>

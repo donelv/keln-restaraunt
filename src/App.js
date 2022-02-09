@@ -6,6 +6,7 @@ import { Provider } from 'react-redux'
 import store from './redux/store'
 import MenuContainer from './components/Menu/MenuContainer'
 import Footer from './components/Footer/Footer'
+import OrderPage from './components/OrderPage/OrderPage'
 function App() {
   return (
     <BrowserRouter>
@@ -14,6 +15,7 @@ function App() {
           <Route exact path={'/'} element={<Navigate to={'/menu'} />} />
           <Route path={'menu'} element={<MenuContainer />} />
           <Route path={'cart'} element={<Cart />} />
+          <Route path={'cart/order'} element={<OrderPage />} />
           <Route path={'*'} element={<div>404 undefined</div>} />
         </Routes>
         <Footer />
