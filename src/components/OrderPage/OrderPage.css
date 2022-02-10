@@ -45,8 +45,11 @@
 .form__button {
   width: 100%;
   height: 5rem;
-  background: #333333;
+  background: #202020;
   color: white;
   border-radius: 1.2rem;
   border: none;
+}
+.form__button:hover {
+  background: #333333;
 }

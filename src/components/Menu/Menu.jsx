@@ -9,7 +9,7 @@ import Navbar from '../Navbar/Navbar'
 const Menu = (props) => {
   let res = Object.entries(goods).map((cat, i) => {
     return (
-      <div id={cat[0]} className="row" key={`foodcard_${i}`}>
+      <div id={cat[0]} className="section-wrapper" key={`foodcard_${i}`}>
         {cat[1].map((sec_map, index) => {
           if (sec_map.id !== undefined) {
             return (
@@ -40,12 +40,8 @@ const Menu = (props) => {
       <Header whatPage={'Меню'} />
       <Navbar />
       <main className="menu">
-        <div className="container">
-          <div id="foodcards">
-            <div id="goods" className="row">
-              {res}
-            </div>
-          </div>
+        <div id="foodcards">
+          <div id="goods">{res}</div>
         </div>
       </main>
     </div>

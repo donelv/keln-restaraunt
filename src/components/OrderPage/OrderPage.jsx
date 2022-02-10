@@ -1,69 +1,80 @@
 import React from 'react'
+import { Formik, Form, Field } from 'formik'
 import './OrderPage.css'
-const OrderPage = () => {
+import { connect } from 'react-redux'
+import Header from '../Header/Header'
+const Input = ({ field, form, ...props }) => {
   return (
-    <form className="form">
-      <div className="form__group">
-        <input className="form__input" spellCheck="false" required></input>
-        <label className="form__label">Имя</label>
-      </div>
-      <div className="form__group">
-        <input
-          className="form__input"
-          spellCheck="false"
-          required
-          type="tel"
-          pattern="+7([0-9]{3}) [0-9]{3}-[0-9]{2}-[0-9]{2}"
-        ></input>
-        <label className="form__label">Телефон</label>
-      </div>
-      <div className="form__group">
-        <input className="form__input" spellCheck="false" required></input>
-        <label className="form__label">Адрес</label>
-      </div>
-      <div className="form__wrapper-input">
-        <div className="form__group">
-          <input
-            className="form__input form__input-small"
-            spellCheck="false"
-            required
-          ></input>
-          <label className="form__label">Подъезд</label>
-        </div>
-        <div className="form__group">
-          <input
-            className="form__input form__input-small"
-            spellCheck="false"
-            required
-          ></input>
-          <label className="form__label">Домофон</label>
-        </div>
-        <div className="form__group">
-          <input
-            className="form__input form__input-small"
-            spellCheck="false"
-            required
-          ></input>
-          <label className="form__label">Кв./Офис</label>
-        </div>
-        <div className="form__group">
-          <input
-            className="form__input form__input-small"
-            spellCheck="false"
-            required
-          ></input>
-          <label className="form__label">Этаж</label>
-        </div>
-      </div>
-      <div className="form__group">
-        <input className="form__input" spellCheck="false" required></input>
-        <label className="form__label">Комментарий</label>
-      </div>
-      <div>
-        <button className="form__button">Подтвердить заказ</button>
-      </div>
-    </form>
+    <div className="form__group">
+      <input className="form__input" spellCheck="false" {...field} required />
+      <label className="form__label">{props.label}</label>
+    </div>
   )
 }
-
-export default OrderPage
+const OrderPage = (props) => {
+  const submit = (values) => {
+    console.log(values, props.items)
+  }
+  return (
+    <div>
+      <Header whatPage={'Заказ'} />
+      <Formik
+        initialValues={{
+          name: '',
+          phone: '',
+          address: '',
+          entrance: '',
+          domofon: '',
+          floor: '',
+          flat: '',
+          comment: '',
+        }}
+        onSubmit={submit}
+      >
+        {() => (
+          <Form className="form">
+            <Field type="text" name="name" label="Имя" component={Input} />
+            <Field type="text" name="phone" label="Телефон" component={Input} />
+            <Field type="text" name="address" label="Адрес" component={Input} />
+            <div className="form__wrapper-input">
+              <Field
+                type="text"
+                name="entrance"
+                label="Подъезд"
+                component={Input}
+              />
+              <Field
+                type="text"
+                name="domofon"
+                label="Домофон"
+                component={Input}
+              />
+              <Field type="text" name="floor" label="Этаж" component={Input} />
+              <Field
+                type="text"
+                name="flat"
+                label="Кв./Офис"
+                component={Input}
+              />
+            </div>
+            <Field
+              type="text"
+              name="comment"
+              label="Комментарий"
+              component={Input}
+            />
+            <button type="submit" className="form__button">
+              Подтвердить заказ
+            </button>
+          </Form>
+        )}
+      </Formik>
+    </div>
+  )
+}
+let mapStateToProps = (state) => {
+  return {
+    items: state.cart.items,
+  }
+}
+export default connect(mapStateToProps, {})(OrderPage)

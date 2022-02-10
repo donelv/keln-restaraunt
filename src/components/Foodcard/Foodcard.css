@@ -2,6 +2,127 @@
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 3rem;
+  width: 18rem;
+  /* height: 36rem; */
+}
+.menu .foodcards-item-top {
+  border-radius: 3rem 3rem 0rem 0rem;
+  /* width: 100%; */
+  /* height: 26rem; */
+  background: black;
+}
+.menu .foodcards-item-top img {
+  border-radius: 3rem 3rem 0rem 0rem;
+  width: 100%;
+  /* height: 26rem;  */
+}
+.menu .foodcards-item-bottom {
+  border-radius: 0rem 0rem 3rem 3rem;
+  /* width: 100%; */
+  height: 18rem;
+  background-color: #ffffff;
+  box-shadow: 0rem 1rem 2rem 0.2rem rgba(0, 0, 0, 0.25);
+  /* position: relative; */
+}
+.menu .foodcards-item-bottom h3 {
+  font-family: 'GothicRus', sans-serif;
+  text-align: center;
+  font-size: 2.2rem;
+  padding-top: 0.5rem;
+  line-height: 100%;
+  margin: 0 0.5rem;
+}
+.menu .foodcards-item-bottom-description {
+  height: 7rem;
+  /* position: relative; */
+}
+.menu .foodcards-item-bottom-description p {
+  margin: 0;
+  /* position: absolute;
+  top: 50%;
+  transform: translateY(-50%); */
+  text-align: center;
+  line-height: 100%;
+  font-family: 'Montserrat-Light', sans-serif;
+  font-size: 1.3rem;
+  /* width: 100%; */
+}
+.menu .foodcards-item-bottom-info {
+  text-align: center;
+  font-size: 1.4rem;
+}
+.menu .foodcards-item-bottom-info-price {
+  font-family: 'Montserrat-Medium', sans-serif;
+}
+.menu .foodcards-item-bottom-info-weight {
+  font-family: 'Montserrat-Regular', sans-serif;
+}
+.menu .foodcards-item-bottom-info-dot {
+  display: inline-block;
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: #000000;
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+  margin: 0 0.5rem;
+}
+.menu .foodcards-item-bottom .button {
+  /* width: 6.5rem; */
+  /* height: 6.5rem; */
+  border: none;
+  background-color: #f2f1ed;
+  border-radius: 2rem;
+  font-size: 3.5rem;
+  font-family: 'Montserrat-Light', sans-serif;
+}
+.menu .foodcards-item-bottom-container {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+}
+.menu .foodcards-item-bottom-container-button-add-to-cart {
+  /* width: 21rem; */
+  height: 5rem;
+  border: none;
+  background-color: #f2f1ed;
+  font-size: 1.4rem;
+  border-radius: 2rem;
+  font-family: 'Montserrat-Regular', sans-serif;
+}
+.menu .foodcards-item-bottom-container-button-delete {
+  width: 5rem;
+  height: 5rem;
+  border: none;
+  background-color: #f2f1ed;
+  border-radius: 1.2rem;
+  font-size: 3.5rem;
+  font-family: 'Montserrat-Light', sans-serif;
+  float: left;
+  margin-left: 1.5rem;
+}
+.menu .foodcards-item-bottom-container-button-add {
+  width: 5rem;
+  height: 5rem;
+  border: none;
+  background-color: #f2f1ed;
+  border-radius: 1.2rem;
+  font-size: 3.5rem;
+  font-family: 'Montserrat-Light', sans-serif;
+  float: right;
+  margin-right: 1.5rem;
+}
+.menu .foodcards-item-bottom-container-amount {
+  display: inline-block;
+  transform: translateY(70%);
+  font-family: 'Montserrat-Regular', sans-serif;
+  font-size: 1.8rem;
+}
+/*
+.menu .foodcards-item {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 3rem;
   width: 24rem;
 }
 .menu .foodcards-item-top {
@@ -117,3 +238,4 @@
   font-family: 'Montserrat-Regular', sans-serif;
   font-size: 1.8rem;
 }
+*/
