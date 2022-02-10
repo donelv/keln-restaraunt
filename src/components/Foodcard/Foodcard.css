@@ -102,6 +102,9 @@
   float: left;
   /* margin-left: 1.5rem; */
 }
+.menu .foodcards-item-bottom-container-button-delete img {
+  pointer-events: none;
+}
 .menu .foodcards-item-bottom-container-button-add {
   width: 5rem;
   height: 5rem;
