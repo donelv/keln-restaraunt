@@ -2,7 +2,7 @@
   margin-left: auto;
   margin-right: auto;
   /* margin-bottom: 3rem; */
-  width: 16rem;
+  width: 17rem;
   /* height: 36rem; */
 }
 .menu .foodcards-item-top {
@@ -80,6 +80,7 @@
   display: inline-block;
   width: 100%;
   text-align: center;
+  padding: 0 1.5rem;
 }
 .menu .foodcards-item-bottom-container-button-add-to-cart {
   /* width: 21rem; */
@@ -96,10 +97,10 @@
   border: none;
   background-color: #f2f1ed;
   border-radius: 1.2rem;
-  font-size: 3.5rem;
-  font-family: 'Montserrat-Light', sans-serif;
+  /* font-size: 3.5rem;
+  font-family: 'Montserrat-Light', sans-serif; */
   float: left;
-  margin-left: 1.5rem;
+  /* margin-left: 1.5rem; */
 }
 .menu .foodcards-item-bottom-container-button-add {
   width: 5rem;
@@ -107,14 +108,14 @@
   border: none;
   background-color: #f2f1ed;
   border-radius: 1.2rem;
-  font-size: 3.5rem;
-  font-family: 'Montserrat-Light', sans-serif;
+  /* font-size: 3.5rem;
+  font-family: 'Montserrat-Light', sans-serif; */
   float: right;
-  margin-right: 1.5rem;
+  /* margin-right: 1.5rem; */
 }
 .menu .foodcards-item-bottom-container-amount {
   display: inline-block;
-  transform: translateY(70%);
+  transform: translateY(50%);
   font-family: 'Montserrat-Regular', sans-serif;
   font-size: 1.8rem;
 }

@@ -1,5 +1,7 @@
 import React from 'react'
 import './Foodcard.css'
+import minus from '../../assets/img/minus.svg'
+import plus from '../../assets/img/plus.svg'
 const FoodcardOld = (props) => {
   const handleClick =
     (plusOrMinus = true) =>
@@ -116,7 +118,7 @@ const Foodcard = (props) => {
                     : handleClick(false)
                 }
               >
-                –
+                <img src={minus} />
               </button>
               <div className="foodcards-item-bottom-container-amount">
                 <span>{props.amount}</span>
@@ -125,7 +127,7 @@ const Foodcard = (props) => {
                 className="foodcards-item-bottom-container-button-add"
                 onClick={handleClick()}
               >
-                +
+                <img src={plus} />
               </button>
             </div>
           )}
