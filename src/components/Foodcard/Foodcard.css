@@ -19,7 +19,7 @@
 .menu .foodcards-item-bottom {
   border-radius: 0rem 0rem 3rem 3rem;
   /* width: 100%; */
-  height: 18rem;
+  height: 20rem;
   background-color: #ffffff;
   box-shadow: 0rem 1rem 2rem 0.2rem rgba(0, 0, 0, 0.25);
   /* position: relative; */
@@ -27,24 +27,27 @@
 .menu .foodcards-item-bottom h3 {
   font-family: 'GothicRus', sans-serif;
   text-align: center;
-  font-size: 2.2rem;
+  font-size: 1.9rem;
   padding-top: 0.5rem;
   line-height: 100%;
   margin: 0 0.5rem;
 }
 .menu .foodcards-item-bottom-description {
-  height: 7rem;
-  /* position: relative; */
+  height: 8.9rem;
+  position: relative;
+  /* width: 50%; */
+  text-align: center;
 }
 .menu .foodcards-item-bottom-description p {
   margin: 0;
-  /* position: absolute;
+  position: absolute;
   top: 50%;
-  transform: translateY(-50%); */
-  text-align: center;
+  transform: translateY(-50%);
+  /* text-align: center; */
   line-height: 100%;
   font-family: 'Montserrat-Light', sans-serif;
-  font-size: 1.3rem;
+  font-size: 1.4rem;
+  margin: 0 0.4rem;
   /* width: 100%; */
 }
 .menu .foodcards-item-bottom-info {
@@ -88,8 +91,10 @@
   border: none;
   background-color: #f2f1ed;
   font-size: 1.4rem;
-  border-radius: 2rem;
+  border-radius: 1.2rem;
   font-family: 'Montserrat-Regular', sans-serif;
+  color: #4e4e4e;
+  line-height: 100%;
 }
 .menu .foodcards-item-bottom-container-button-delete {
   width: 5rem;

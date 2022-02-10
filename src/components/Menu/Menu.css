@@ -7,6 +7,6 @@
   justify-content: center;
   grid-row-gap: 1.5rem;
   grid-column-gap: 1.5rem;
-  margin: 0 1.5rem;
+  margin: 0 1.5rem 1.5rem 1.5rem;
   grid-template-columns: repeat(2, 170px);
 }
