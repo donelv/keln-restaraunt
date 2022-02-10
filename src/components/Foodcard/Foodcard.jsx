@@ -84,7 +84,7 @@ const Foodcard = (props) => {
         <img src={props.img} alt={props.obj.name} />
       </div>
       <div className="foodcards-item-bottom">
-        <h3 className="foodcards-item-bottom-name">{props.obj.name}</h3>
+        <div className="foodcards-item-bottom-name">{props.obj.name}</div>
         <div className="foodcards-item-bottom-description">
           <p>{props.obj.description}</p>
         </div>

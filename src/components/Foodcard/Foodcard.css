@@ -32,6 +32,14 @@
   line-height: 100%;
   margin: 0 0.5rem;
 }
+.menu .foodcards-item-bottom-name {
+  font-family: 'GothicRus', sans-serif;
+  text-align: center;
+  font-size: 1.9rem;
+  padding-top: 0.5rem;
+  line-height: 100%;
+  margin: 0 0.5rem;
+}
 .menu .foodcards-item-bottom-description {
   height: 8.9rem;
   position: relative;
