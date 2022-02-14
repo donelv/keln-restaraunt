@@ -19,10 +19,10 @@
 .menu .foodcards-item-bottom {
   border-radius: 0rem 0rem 3rem 3rem;
   /* width: 100%; */
-  height: 20rem;
+  height: 22rem;
   background-color: #ffffff;
   box-shadow: 0rem 1rem 2rem 0.2rem rgba(0, 0, 0, 0.25);
-  /* position: relative; */
+  position: relative;
 }
 .menu .foodcards-item-bottom h3 {
   font-family: 'GothicRus', sans-serif;
@@ -35,8 +35,8 @@
 .menu .foodcards-item-bottom-name {
   font-family: 'GothicRus', sans-serif;
   text-align: center;
-  font-size: 1.9rem;
-  padding-top: 0.5rem;
+  font-size: 2rem;
+  padding-top: 0.8rem;
   line-height: 100%;
   margin: 0 0.5rem;
 }
@@ -89,6 +89,8 @@
 }
 .menu .foodcards-item-bottom-container {
   display: inline-block;
+  position: absolute;
+  bottom: 1.5rem;
   width: 100%;
   text-align: center;
   padding: 0 1.5rem;

@@ -35,12 +35,13 @@ const Header = (props) => {
               <img src={cart} alt="Корзина" />
             </div>
           </Link>
-          <div className="header__liked">
+          {/*<div className="header__liked">
             <img src={liked} alt="Сохранённое" />
           </div>
           <div className="header__search">
             <img src={search} alt="Поиск" />
-          </div>
+          </div>/*}
+          
           {/* {<ul className="search">
             {!searchShow && (
               <li className="cart">
