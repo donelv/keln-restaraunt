@@ -5,8 +5,20 @@ import goods from '../../assets/goods.json'
 import defaultPhoto from '../../assets/img/food/leberhause.jpg'
 import Header from '../Header/Header'
 import Navbar from '../Navbar/Navbar'
-
+import { db } from '../../db'
+import { collection, getDocs } from 'firebase/firestore'
 const Menu = (props) => {
+  const ref = collection(db, 'goods')
+  // console.log(ref)
+
+  useEffect(() => {
+    const getData = async () => {
+      const data = await getDocs(ref)
+      // console.log(ref)
+      console.log(data.docs.map((doc) => ({ ...doc.data() })))
+    }
+    getData()
+  }, [])
   let res = Object.entries(goods).map((cat, i) => {
     return (
       <div id={cat[0]} className="section-wrapper" key={`foodcard_${i}`}>

@@ -64,11 +64,7 @@
   line-height: 100%;
   margin-bottom: 0.8rem;
 }
-.header__cart,
-.header__liked,
-.header__search {
-  display: inline-block;
-}
+
 .header__liked,
 .header__search {
   margin-left: 1rem;

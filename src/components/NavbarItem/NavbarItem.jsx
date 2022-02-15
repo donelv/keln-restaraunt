@@ -50,7 +50,7 @@ const NavbarItem = (props) => {
         to={props.itemName}
         spy={true}
         smooth={true}
-        offset={-160}
+        offset={-155}
         duration={70}
         //onSetActive={scrollToCategory}
       >
