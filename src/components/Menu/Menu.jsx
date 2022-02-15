@@ -5,8 +5,8 @@ import goods from '../../assets/goods.json'
 import defaultPhoto from '../../assets/img/food/leberhause.jpg'
 import Header from '../Header/Header'
 import Navbar from '../Navbar/Navbar'
-import { db } from '../../db'
-import { collection, getDocs } from 'firebase/firestore'
+// import { db } from '../../db'
+// import { collection, getDocs } from 'firebase/firestore'
 const Menu = (props) => {
   // const ref = collection(db, 'goods')
 
