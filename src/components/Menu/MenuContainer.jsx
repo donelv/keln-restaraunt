@@ -14,13 +14,15 @@ const MenuContainer = (props) => {
       deleteItem={props.deleteItem}
       increaseItem={props.increaseItem}
       decreaseItem={props.decreaseItem}
-      items={props.items}
+      cartItems={props.cartItems}
+      menuItems={props.menuItems}
     />
   )
 }
 let mapStateToProps = (state) => {
   return {
-    items: state.cart.items,
+    cartItems: state.cart.items,
+    menuItems: state.menu,
   }
 }
 export default connect(mapStateToProps, {

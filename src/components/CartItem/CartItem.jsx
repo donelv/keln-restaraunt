@@ -20,7 +20,7 @@ const CartItem = (props) => {
         </div>
 
         <div className="main-cart-item-name">
-          <h3>{props.name}</h3>
+          <div>{props.name}</div>
           <p>{props.description}</p>
         </div>
         <div className="main-cart-item-wrap">

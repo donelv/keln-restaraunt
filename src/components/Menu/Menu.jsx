@@ -1,46 +1,34 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import Foodcard from '../Foodcard/Foodcard'
 import './Menu.css'
-import goods from '../../assets/goods.json'
-import defaultPhoto from '../../assets/img/food/leberhause.jpg'
 import Header from '../Header/Header'
 import Navbar from '../Navbar/Navbar'
-// import { db } from '../../db'
-// import { collection, getDocs } from 'firebase/firestore'
 const Menu = (props) => {
-  // const ref = collection(db, 'goods')
-
-  // useEffect(() => {
-  //   const getData = async () => {
-  //     const data = await getDocs(ref)
-  //     console.log(data.docs.map((doc) => ({ ...doc.data() })))
-  //   }
-  //   getData()
-  // }, [])
-  let res = Object.entries(goods).map((cat, i) => {
+  let res = Object.keys(props.menuItems).map((category) => {
     return (
-      <div id={cat[0]} className="section-wrapper" key={`foodcard_${i}`}>
-        {cat[1].map((sec_map, index) => {
-          if (sec_map.id !== undefined) {
-            return (
-              <Foodcard
-                key={`foodcard_${index}`}
-                obj={sec_map}
-                amount={props.items
-                  .map((item) => {
-                    if (sec_map.id === item.id) {
-                      return item.amount
-                    }
-                  })
-                  .filter((el) => el !== undefined)}
-                img={defaultPhoto}
-                addItem={props.addItem}
-                deleteItem={props.deleteItem}
-                increaseItem={props.increaseItem}
-                decreaseItem={props.decreaseItem}
-              />
-            )
-          }
+      <div
+        id={category}
+        className="section-wrapper"
+        key={`foodcard_${category}`}
+      >
+        {props.menuItems[category].map((item, index) => {
+          return (
+            <Foodcard
+              key={`foodcard_${index}`}
+              obj={item}
+              amount={props.cartItems
+                .map((state_item) => {
+                  if (state_item.id === item.id) {
+                    return state_item.amount
+                  }
+                })
+                .filter((el) => el !== undefined)}
+              addItem={props.addItem}
+              deleteItem={props.deleteItem}
+              increaseItem={props.increaseItem}
+              decreaseItem={props.decreaseItem}
+            />
+          )
         })}
       </div>
     )

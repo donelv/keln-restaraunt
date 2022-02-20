@@ -4,24 +4,11 @@ const DELETE_ITEM = 'DELETE_ITEM'
 const INCREASE_ITEM = 'INCREASE_ITEM'
 const DECREASE_ITEM = 'DECREASE_ITEM'
 const COUNT_SUM_OF_THE_CART = 'COUNT_SUM_OF_THE_CART'
-
-/*
- {
-      "id": "1",
-      "name": "Леберхаус",
-      "price": "395",
-      "weight": "260",
-      "description": "куриная печень, черри, перепелиное яйцо, кедровые орехи, апельсины, листья салата, винный соус",
-      "img": "img/food/leberhause.jpg",
-      "delivery": true
-    },
-*/
-
 let initialState = {
   sum: 0,
   items: [
     {
-      id: '1',
+      id: 11,
       name: 'Леберхаус',
       price: '395',
       weight: '260',
@@ -88,6 +75,7 @@ const cartReducer = (state = initialState, action) => {
       return state
   }
 }
+
 const deleteItemAC = (itemId) => ({
   type: DELETE_ITEM,
   itemId,

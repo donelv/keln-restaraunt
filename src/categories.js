@@ -1,0 +1,26 @@
+// export const categories = {
+//   salads: 'Салаты',
+//   coldSnacks: 'Холодные закуски',
+//   hotSnacks: 'Горячие закуски',
+//   soups: 'Супы',
+//   garnish: 'Гарниры',
+//   desserts: 'Десерты',
+//   meatDishes: 'Мясные блюда',
+//   fishDishes: 'Рыбные блюда',
+//   steamedDishes: 'Блюда на пару',
+//   sausages: 'Колбаски',
+//   steaks: 'Стейки',
+// }
+export const categories = {
+  salads: {},
+  coldSnacks: {},
+  hotSnacks: {},
+  soups: {},
+  garnish: {},
+  desserts: {},
+  meatDishes: {},
+  fishDishes: {},
+  steamedDishes: {},
+  sausages: {},
+  steaks: {},
+}

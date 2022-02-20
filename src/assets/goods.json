@@ -1,6 +1,5 @@
 {
   "salads": [
-    { "categoryId": "1", "categoryName": "Салаты" },
     {
       "id": "1",
       "name": "Леберхаус",

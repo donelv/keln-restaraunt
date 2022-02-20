@@ -1,27 +1,30 @@
 import './App.css'
-import Menu from './components/Menu/Menu'
 import Cart from './components/Cart/Cart'
-import { BrowserRouter, Route, Navigate, Routes } from 'react-router-dom'
-import { Provider } from 'react-redux'
-import store from './redux/store'
+import { Route, Navigate, Routes } from 'react-router-dom'
 import MenuContainer from './components/Menu/MenuContainer'
 import Footer from './components/Footer/Footer'
 import OrderPage from './components/OrderPage/OrderPage'
-function App() {
+import React, { useEffect } from 'react'
+import { getMenu } from './redux/menu-reducer'
+import { connect } from 'react-redux'
+const App = (props) => {
+  useEffect(() => {
+    props.getMenu()
+  }, [])
   return (
-    <BrowserRouter>
-      <Provider store={store}>
-        <Routes>
-          <Route exact path={'/'} element={<Navigate to={'/menu'} />} />
-          <Route path={'menu'} element={<MenuContainer />} />
-          <Route path={'cart'} element={<Cart />} />
-          <Route path={'cart/order'} element={<OrderPage />} />
-          <Route path={'*'} element={<div>404 undefined</div>} />
-        </Routes>
-        <Footer />
-      </Provider>
-    </BrowserRouter>
+    <>
+      <Routes>
+        <Route exact path={'/'} element={<Navigate to={'/menu'} />} />
+        <Route path={'menu'} element={<MenuContainer />} />
+        <Route path={'cart'} element={<Cart />} />
+        <Route path={'cart/order'} element={<OrderPage />} />
+        <Route path={'*'} element={<div>404 undefined</div>} />
+      </Routes>
+      <Footer />
+    </>
   )
 }
-
-export default App
+const mapStateToProps = (state) => ({})
+export default connect(mapStateToProps, {
+  getMenu,
+})(App)

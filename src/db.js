@@ -1,13 +1,23 @@
 import { initializeApp } from 'firebase/app'
-import { getFirestore } from '@firebase/firestore'
+import {
+  getFirestore,
+  getDocs,
+  collection,
+  query,
+  orderBy,
+} from '@firebase/firestore'
 const firebaseConfig = {
-  apiKey: 'AIzaSyA5cf6VkZg1jGByczbWEg5XupNknveZUzs',
-  authDomain: 'keln-restaraunt.firebaseapp.com',
-  databaseURL: 'https://keln-restaraunt-default-rtdb.firebaseio.com',
-  projectId: 'keln-restaraunt',
-  storageBucket: 'keln-restaraunt.appspot.com',
-  messagingSenderId: '724905727936',
-  appId: '1:724905727936:web:94e201b89a37b579569a25',
+  apiKey: process.env.REACT_APP_FIREBASE_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_DOMAIN,
+  databaseURL: process.env.REACT_APP_FIREBASE_DATABASE,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID,
 }
 const app = initializeApp(firebaseConfig)
-export const db = getFirestore(app)
+const db = getFirestore(app)
+export const getData = async (coll) => {
+  const colRef = collection(db, coll)
+  return await getDocs(query(colRef, orderBy('id')))
+}

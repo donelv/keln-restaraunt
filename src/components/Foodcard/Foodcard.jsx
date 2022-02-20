@@ -2,6 +2,7 @@ import React from 'react'
 import './Foodcard.css'
 import minus from '../../assets/img/minus.svg'
 import plus from '../../assets/img/plus.svg'
+import defaultPhoto from '../../assets/img/food/leberhause.jpg'
 const FoodcardOld = (props) => {
   const handleClick =
     (plusOrMinus = true) =>
@@ -81,7 +82,7 @@ const Foodcard = (props) => {
   return (
     <div className="foodcards-item">
       <div className="foodcards-item-top">
-        <img src={props.img} alt={props.obj.name} />
+        <img src={props.obj.img} alt={props.obj.name} />
       </div>
       <div className="foodcards-item-bottom">
         <div className="foodcards-item-bottom-name">{props.obj.name}</div>
