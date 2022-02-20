@@ -4,7 +4,7 @@
 .menu .foodcards-item-top {
   border-radius: 3rem 3rem 0rem 0rem;
   background: black;
-  height: 22rem;
+  /* height: 22rem; */
 }
 .menu .foodcards-item-top img {
   border-radius: 3rem 3rem 0rem 0rem;

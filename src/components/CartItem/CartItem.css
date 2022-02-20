@@ -1,0 +1,73 @@
+.cart-item {
+  border-radius: 2rem;
+  background-color: #ffffff;
+  box-shadow: 0rem 1rem 2rem 0.2rem #00000040;
+  padding: 1.5rem;
+  height: fit-content;
+  position: relative;
+  /* margin: 0 1.5rem 1.5rem 0; */
+}
+.cart-item__img {
+  display: inline-block;
+  height: 10rem;
+  background-color: #000000;
+}
+.cart-item__img img {
+  height: 100%;
+  border-radius: 2rem;
+}
+.cart-item__description {
+  display: inline-block;
+  vertical-align: top;
+  width: 20rem;
+  margin-left: 1.5rem;
+}
+.cart-item__description div {
+  display: inline;
+  font-family: 'GothicRus', sans-serif;
+  font-size: 2.4rem;
+  line-height: 100%;
+}
+.cart-item__description span {
+  font-family: 'Montserrat-Regular', sans-serif;
+  font-size: 1.8rem;
+  line-height: 100%;
+}
+.cart-item__description span::before {
+  content: ' | ';
+  /* font-family: 'Montserrat-Light', sans-serif; */
+}
+.cart-item__description p {
+  font-family: 'Montserrat-Light', sans-serif;
+  font-size: 1.4rem;
+  line-height: 100%;
+  margin: 0;
+}
+.cart-item__minus,
+.cart-item__plus {
+  width: 4.5rem;
+  height: 4.5rem;
+  border: none;
+  background-color: #f2f1ed;
+  border-radius: 1.2rem;
+}
+.cart-item__minus {
+  float: left;
+}
+.cart-item__plus {
+  float: right;
+}
+.cart-item__amount {
+  display: inline-block;
+  font-family: 'Montserrat-Regular', sans-serif;
+  font-size: 1.8rem;
+  transform: translateY(35%);
+}
+.cart-item__buttons {
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 13rem;
+  text-align: center;
+}

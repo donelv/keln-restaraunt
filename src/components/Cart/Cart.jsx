@@ -9,22 +9,24 @@ const Cart = (props) => {
   return (
     <div>
       <Header whatPage={'Корзина'}></Header>
-      <div className="main-cart">
-        {props.sum === 0 ? (
-          <EmptyCart />
-        ) : (
-          <>
-            <CartItemContainer />
-            <div className="main-cart__button-wrapper">
-              <div className="main-cart-sum">
-                <span>Итогo: {props.sum}₽</span>
+      <div className="main">
+        <div className="main-cart">
+          {props.sum === 0 ? (
+            <EmptyCart />
+          ) : (
+            <>
+              <CartItemContainer />
+              <div className="main-cart__button-wrapper">
+                <div className="main-cart-sum">
+                  <span>Итогo: {props.sum}₽</span>
+                </div>
+                <button className="main-cart-order_button">
+                  <Link to="/cart/order">Оформление заказа</Link>
+                </button>
               </div>
-              <button className="main-cart-order_button">
-                <Link to="/cart/order">Оформление заказа</Link>
-              </button>
-            </div>
-          </>
-        )}
+            </>
+          )}
+        </div>
       </div>
     </div>
   )
