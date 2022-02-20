@@ -9,7 +9,7 @@ import {
 const firebaseConfig = {
   apiKey: 'AIzaSyA5cf6VkZg1jGByczbWEg5XupNknveZUzs',
   authDomain: 'keln-restaraunt.firebaseapp.com',
-  databaseURL: 'https://keln-restaraunt-default-rtdb.firebaseio.com',
+  databaseURL: 'http://keln-restaraunt-default-rtdb.firebaseio.com',
   projectId: 'keln-restaraunt',
   storageBucket: 'keln-restaraunt.appspot.com',
   messagingSenderId: '724905727936',
