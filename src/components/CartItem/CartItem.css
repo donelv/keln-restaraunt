@@ -85,7 +85,7 @@
   }
   .cart-item__wrapper-buttons {
     width: 100%;
-    justify-content: right;
+    justify-content: flex-end;
     margin-top: 1rem;
     border: 2px solid red;
   }
