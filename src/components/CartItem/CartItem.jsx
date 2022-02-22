@@ -26,28 +26,30 @@ const CartItem = (props) => {
 
         <p>{props.description}</p>
       </div>
-      <div className="cart-item__buttons">
-        {props.amount <= 0 ? (
-          handleDelete()
-        ) : (
-          <>
-            <button
-              className="cart-item__minus"
-              onClick={() => handleClick(false)}
-            >
-              <img src={decreaseItemIcon} alt="Уменьшить" />
-            </button>
-            <div className="cart-item__amount">
-              <span>{props.amount}</span>
-            </div>
-            <button
-              className="cart-item__plus"
-              onClick={() => handleClick(true)}
-            >
-              <img src={increaseItemIcon} alt="Увеличить" />
-            </button>
-          </>
-        )}
+      <div className="cart-item__wrapper-buttons">
+        <div className="cart-item__buttons">
+          {props.amount <= 0 ? (
+            handleDelete()
+          ) : (
+            <>
+              <button
+                className="cart-item__minus"
+                onClick={() => handleClick(false)}
+              >
+                <img src={decreaseItemIcon} alt="Уменьшить" />
+              </button>
+              <div className="cart-item__amount">
+                <span>{props.amount}</span>
+              </div>
+              <button
+                className="cart-item__plus"
+                onClick={() => handleClick(true)}
+              >
+                <img src={increaseItemIcon} alt="Увеличить" />
+              </button>
+            </>
+          )}
+        </div>
       </div>
     </div>
     // <div className="main-cart-item">
