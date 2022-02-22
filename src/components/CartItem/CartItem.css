@@ -85,7 +85,7 @@
   }
   .cart-item__wrapper-buttons {
     width: 100%;
-    justify-content: end;
+    justify-content: right;
     margin-top: 1rem;
   }
 }
