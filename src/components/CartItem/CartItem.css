@@ -87,6 +87,10 @@
     width: 100%;
     justify-content: right;
     margin-top: 1rem;
+    border: 2px solid red;
+  }
+  .cart-item__buttons {
+    border: 2px solid blue;
   }
 }
 @media (max-width: 347px) {
