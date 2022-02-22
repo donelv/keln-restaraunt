@@ -69,6 +69,7 @@
 }
 .cart-item__wrapper-buttons {
   display: flex;
+  justify-content: flex-end;
 }
 .cart-item__buttons {
   display: inline-block;
@@ -85,12 +86,7 @@
   }
   .cart-item__wrapper-buttons {
     width: 100%;
-    justify-content: flex-end;
     margin-top: 1rem;
-    border: 2px solid red;
-  }
-  .cart-item__buttons {
-    border: 2px solid blue;
   }
 }
 @media (max-width: 347px) {
