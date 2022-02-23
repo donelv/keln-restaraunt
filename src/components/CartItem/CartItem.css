@@ -70,8 +70,11 @@
 .cart-item__wrapper-buttons {
   display: flex;
   justify-content: flex-end;
+  border: 2px solid red;
+  width: auto;
 }
 .cart-item__buttons {
+  border: 2px solid blue;
   display: inline-block;
   width: 13rem;
   text-align: center;
