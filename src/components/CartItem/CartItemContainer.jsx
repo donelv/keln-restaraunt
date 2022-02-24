@@ -12,6 +12,7 @@ const CartItemContainer = (props) => {
       <CartItem
         key={`cartitem_${index}`}
         id={ci.id}
+        img={ci.img}
         name={ci.name}
         description={ci.description}
         amount={ci.amount}

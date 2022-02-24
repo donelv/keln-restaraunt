@@ -8,15 +8,14 @@ let initialState = {
   sum: 0,
   items: [
     {
-      id: 11,
-      name: 'Леберхаус',
-      price: '395',
-      weight: '260',
       description:
-        'куриная печень, черри, перепелиное яйцо, кедровые орехи, апельсины, листья салата, винный соус',
-      img: defaultPhoto,
-      delivery: true,
-      amount: 2,
+        'семга, авокадо, струч. фасоль, черри, кедровый орех, листья салата, горчичный соус',
+      id: 12,
+      img: 'img/food/fishingen.jpg',
+      name: 'Фишинген',
+      price: 635,
+      weight: 240,
+      amount: 1,
     },
   ],
 }
@@ -55,7 +54,6 @@ const cartReducer = (state = initialState, action) => {
       }
     }
     case ADD_ITEM: {
-      console.log(action.fullItem)
       return {
         ...state,
         items: [...state.items, { ...action.fullItem, amount: 1 }],

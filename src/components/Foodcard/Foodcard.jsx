@@ -113,7 +113,6 @@ const Foodcard = (props) => {
                 onClick={
                   props.amount == 1
                     ? () => {
-                        console.log('should delete')
                         props.deleteItem(props.obj.id)
                       }
                     : handleClick(false)

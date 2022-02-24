@@ -16,7 +16,7 @@ const CartItem = (props) => {
   return (
     <div className="cart-item">
       <div className="cart-item__img">
-        <img src={defaultPhoto} alt={props.name} />
+        <img src={props.img} alt={props.name} />
       </div>
       <div className="cart-item__description">
         <div className="cart-item__name-and-price">
@@ -28,27 +28,20 @@ const CartItem = (props) => {
       </div>
       <div className="cart-item__wrapper-buttons">
         <div className="cart-item__buttons">
-          {props.amount <= 0 ? (
-            handleDelete()
-          ) : (
-            <>
-              <button
-                className="cart-item__minus"
-                onClick={() => handleClick(false)}
-              >
-                <img src={decreaseItemIcon} alt="Уменьшить" />
-              </button>
-              <div className="cart-item__amount">
-                <span>{props.amount}</span>
-              </div>
-              <button
-                className="cart-item__plus"
-                onClick={() => handleClick(true)}
-              >
-                <img src={increaseItemIcon} alt="Увеличить" />
-              </button>
-            </>
-          )}
+          <button
+            className="cart-item__minus"
+            onClick={() => {
+              props.amount <= 1 ? handleDelete() : handleClick(false)
+            }}
+          >
+            <img src={decreaseItemIcon} alt="Уменьшить" />
+          </button>
+          <div className="cart-item__amount">
+            <span>{props.amount}</span>
+          </div>
+          <button className="cart-item__plus" onClick={() => handleClick(true)}>
+            <img src={increaseItemIcon} alt="Увеличить" />
+          </button>
         </div>
       </div>
     </div>

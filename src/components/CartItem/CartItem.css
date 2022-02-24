@@ -6,11 +6,11 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
 }
 .cart-item__img {
   display: inline-block;
   height: 10rem;
+  width: 10rem;
   background-color: #000000;
   border-radius: 2rem;
   align-self: baseline;
@@ -85,9 +85,6 @@
   /* width: 1rem; */
 }
 @media (max-width: 504px) {
-  .cart-item {
-    justify-content: flex-start;
-  }
   .cart-item__description {
     max-width: 60%;
   }
