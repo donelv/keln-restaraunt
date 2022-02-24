@@ -6,6 +6,7 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  position: relative;
 }
 .cart-item__img {
   display: inline-block;
@@ -83,6 +84,21 @@
 .cart-item__buttons img {
   pointer-events: none;
   /* width: 1rem; */
+}
+.cart-item__delete-button {
+  position: absolute;
+  height: 2.5rem;
+  width: 2.5rem;
+  top: -0.6rem;
+  right: -0.6rem;
+  border: none;
+  background-color: #f2efed;
+  border-radius: 0.5rem;
+  text-align: center;
+}
+.cart-item__delete-button img {
+  height: 100%;
+  width: 100%;
 }
 @media (max-width: 504px) {
   .cart-item__description {

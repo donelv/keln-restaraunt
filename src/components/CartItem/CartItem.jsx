@@ -44,6 +44,9 @@ const CartItem = (props) => {
           </button>
         </div>
       </div>
+      <button className="cart-item__delete-button" onClick={handleDelete}>
+        <img src={deleteItemIcon} alt="Закрыть" />
+      </button>
     </div>
     // <div className="main-cart-item">
     //   <div className="main-cart-item__image">

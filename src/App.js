@@ -20,7 +20,7 @@ const App = (props) => {
         <Route path={'cart/order'} element={<OrderPage />} />
         <Route path={'*'} element={<div>404 undefined</div>} />
       </Routes>
-      <Footer />
+      {/* <Footer /> */}
     </>
   )
 }

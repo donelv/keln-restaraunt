@@ -7,16 +7,16 @@ const COUNT_SUM_OF_THE_CART = 'COUNT_SUM_OF_THE_CART'
 let initialState = {
   sum: 0,
   items: [
-    {
-      description:
-        'семга, авокадо, струч. фасоль, черри, кедровый орех, листья салата, горчичный соус',
-      id: 12,
-      img: 'img/food/fishingen.jpg',
-      name: 'Фишинген',
-      price: 635,
-      weight: 240,
-      amount: 1,
-    },
+    // {
+    //   description:
+    //     'семга, авокадо, струч. фасоль, черри, кедровый орех, листья салата, горчичный соус',
+    //   id: 12,
+    //   img: 'img/food/fishingen.jpg',
+    //   name: 'Фишинген',
+    //   price: 635,
+    //   weight: 240,
+    //   amount: 1,
+    // },
   ],
 }
 const cartReducer = (state = initialState, action) => {
