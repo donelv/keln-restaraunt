@@ -30,7 +30,8 @@
   outline: none;
 }
 .form__input:focus ~ .form__label,
-.form__input:valid ~ .form__label {
+.form__input:valid ~ .form__label,
+.form__input:optional ~ .form__label {
   top: 0.5rem;
   font-size: 1.2rem;
   color: #909090;

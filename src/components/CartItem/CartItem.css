@@ -87,18 +87,18 @@
 }
 .cart-item__delete-button {
   position: absolute;
-  height: 2.5rem;
-  width: 2.5rem;
+  height: 2rem;
+  width: 2rem;
   padding: 0;
-  top: -0.6rem;
-  right: -0.6rem;
+  top: 0.6rem;
+  right: 0.6rem;
   border: none;
-  background-color: #f2efed;
+  background-color: transparent;
   border-radius: 0.5rem;
   text-align: center;
 }
 .cart-item__delete-button img {
-  height: 1.2rem;
+  height: 1.4rem;
 }
 @media (max-width: 504px) {
   .cart-item__description {
