@@ -1,4 +1,5 @@
 import React from 'react'
+import { useEffect } from 'react'
 import { Link, animateScroll as scroll } from 'react-scroll'
 const NavbarItem = (props) => {
   let obj = {
@@ -14,15 +15,19 @@ const NavbarItem = (props) => {
     sausages: 'Колбаски',
     steaks: 'Стейки',
   }
+
+  // document.getElementsByClassName(
+  //   `mynavbar-wrap-${props.activeCategory}`
+  // )[0].scrollLeft = 100
   const handleScroll = (el) => {
-    /*document.getElementsByClassName('nav-menu')[0].scrollLeft = 0
+    document.getElementsByClassName('nav-menu')[0].scrollLeft = 0
     var menus = document.getElementsByClassName('nav-menu__item')
     for (var i = 0; i < menus.length; i++) {
       if (menus[i].classList.contains('active')) {
         document.getElementsByClassName('nav-menu')[0].scrollLeft =
           menus[i].offsetLeft
       }
-    }*/
+    }
     //setTimeout(() => console.log(el), 1000)
     /*
     var items = document.getElementsByClassName('mynavbar_item')
@@ -42,17 +47,28 @@ const NavbarItem = (props) => {
     //el.scrollIntoView({ inline: 'center' })
     document.getElementsByClassName(el)[0].scrollIntoView({ inline: 'center' })
   }
+  // const testFunc = (el) => {
+  //   console.log(el)
+  //   document.getElementsByClassName('mynavbar-wrap')[0].scrollLeft = 20
+  // }
+  // console.log(document.getElementsByClassName('mynavbar-wrap')[0])
+  let aClass = 'mynavbar_item_a'
+  if (props.itemName === props.activeCategory) aClass += ' active'
+  // document.getElementsByClassName('mynavbar')[0].scrollLeft = 20
   return (
     <li className={'mynavbar_item'}>
       <Link
-        //className={props.itemName}
+        // className={'active'}
         activeClass="active"
         to={props.itemName}
-        spy={true}
+        spy={false}
         smooth={true}
-        offset={-155}
+        offset={-125}
         duration={70}
-        //onSetActive={scrollToCategory}
+        className={aClass}
+        // onClick={testFunc}
+        // onSetActive={handleScroll}
+        // onScroll={testFunc}
       >
         {obj[props.itemName]}
       </Link>
