@@ -66,6 +66,7 @@ const NavbarItem = (props) => {
         offset={-125}
         duration={70}
         className={aClass}
+        onClick={props.handleClick}
         // onClick={testFunc}
         // onSetActive={handleScroll}
         // onScroll={testFunc}

@@ -4,10 +4,11 @@ import './OrderPage.css'
 import { connect } from 'react-redux'
 import Header from '../Header/Header'
 const Input = ({ field, form, ...props }) => {
-  console.log('render')
+  console.log(props)
   return (
     <div className="form__group">
       <input
+        type={props.type}
         className="form__input"
         spellCheck="false"
         {...field}
