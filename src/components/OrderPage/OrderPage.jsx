@@ -1,10 +1,10 @@
-import React, { useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Formik, Form, Field } from 'formik'
 import './OrderPage.css'
 import { connect } from 'react-redux'
 import Header from '../Header/Header'
 const Input = ({ field, form, ...props }) => {
-  console.log(props)
+  // console.log(props)
   return (
     <div className="form__group">
       <input
@@ -15,12 +15,34 @@ const Input = ({ field, form, ...props }) => {
         required
         placeholder={props.placeHolder}
         maxLength={props.maxLength}
+        // value={props.inpValue || undefined}
+        // onChange={props.handleChange || undefined}
       />
       <label className="form__label">{props.label}</label>
     </div>
   )
 }
 const OrderPage = (props) => {
+  useEffect(() => {
+    let phoneInputs = document.querySelectorAll('input[name="phone"]')
+    for (var i = 0; i < phoneInputs.length; i++) {
+      let input = phoneInputs[i]
+      input.addEventListener('input', testInputListener)
+      // input.addEventListener('keydown', onPhoneKeyDown)
+      // input.addEventListener('paste', onPhonePaste)
+    }
+  }, [])
+  // let [inputValue, setInputValue] = useState('')
+
+  const testInputListener = (e) => {
+    let input = e.target,
+      inputNumbersValue = getInputNumbersValue(input)
+    if (!inputNumbersValue) {
+      input.value = '1'
+    }
+    console.log(input.value)
+  }
+
   const getInputNumbersValue = (input) => {
     return input.value.replace(/\D/g, '')
   }
@@ -81,19 +103,12 @@ const OrderPage = (props) => {
       // Not Russian number
     }
     console.log(formattedInputValue)
-    input.value = formattedInputValue //Инпут полностью очищается здесь, скорее всего делается с использованием useState
+    // input.value = formattedInputValue //Инпут полностью очищается здесь, скорее всего делается с использованием useState
+    input.value = formattedInputValue
     // console.log(input.value)
     // console.log(inputNumbersValue)
   }
-  useEffect(() => {
-    let phoneInputs = document.querySelectorAll('input[name="phone"]')
-    for (var i = 0; i < phoneInputs.length; i++) {
-      let input = phoneInputs[i]
-      input.addEventListener('input', onPhoneInput)
-      input.addEventListener('keydown', onPhoneKeyDown)
-      input.addEventListener('paste', onPhonePaste)
-    }
-  }, [])
+
   const submit = (values) => {
     console.log(values, props.items)
   }
@@ -122,6 +137,9 @@ const OrderPage = (props) => {
               label="Телефон"
               component={Input}
               maxLength="18"
+              // inpValue={inputValue}
+              // handleChange={testInputListener}
+              // handleChange={testInputListener}
             />
             <Field type="text" name="address" label="Адрес" component={Input} />
             <div className="form__wrapper-input">

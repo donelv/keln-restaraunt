@@ -4,7 +4,8 @@
   justify-content: center;
   font-family: 'Montserrat-Medium', sans-serif;
   font-size: 1.6rem;
-  margin: 2rem 1.5rem;
+  padding: 2rem 1.5rem;
+  background-color: rgba(231, 203, 134, 0.5);
 }
 .form__group {
   position: relative;
