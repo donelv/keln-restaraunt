@@ -1,11 +1,10 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Formik, Form, Field } from 'formik'
 import './OrderPage.css'
 import { connect } from 'react-redux'
 import Header from '../Header/Header'
 const Input = ({ field, form, ...props }) => {
   // console.log(props)
-  // console.log(inputEl)
   return (
     <div className="form__group">
       <input
@@ -13,52 +12,44 @@ const Input = ({ field, form, ...props }) => {
         className="form__input"
         spellCheck="false"
         {...field}
-        // {...props}
-        // onChange={props.onChange}
         required
-        // ref={props.innerRef}
-        // placeholder={props.placeHolder}
-        // maxLength={props.maxLength}
-        // value={props.inpValue}
-        // onChange={props.handleChange}
+        placeholder={props.placeHolder}
+        maxLength={props.maxLength}
+        // value={props.inpValue || undefined}
+        // onChange={props.handleChange || undefined}
       />
       <label className="form__label">{props.label}</label>
     </div>
   )
 }
-const PhoneInput = ({ field, form, ...props }) => {
-  // let [inputVal, setInputVal] = useState('1')
-  // console.log(props)
-  // props.onChange()
-  // console.log(field)
-  const inputEl = useRef()
+const OrderPage = (props) => {
   useEffect(() => {
-    // console.log('usef')
-    // props.setFieldValue('phone', '7')
-    // let phoneInputs = document.querySelectorAll('input[name="phone"]')
-    // for (var i = 0; i < phoneInputs.length; i++) {
-    //   let input = phoneInputs[i]
-    //   input.addEventListener('input', onPhoneInput)
-    //   input.addEventListener('keydown', onPhoneKeyDown)
-    //   input.addEventListener('paste', onPhonePaste)
-    // }
-    // console.log(inputEl)
-    inputEl.current.addEventListener('input', onPhoneInput)
-    inputEl.current.addEventListener('keydown', onPhoneKeyDown)
-    inputEl.current.addEventListener('paste', onPhonePaste)
-    return () => {
-      inputEl.current.removeListener('input', onPhoneInput)
-      inputEl.current.removeListener('keydown', onPhoneKeyDown)
-      inputEl.current.removeListener('paste', onPhonePaste)
+    let phoneInputs = document.querySelectorAll('input[name="phone"]')
+    for (var i = 0; i < phoneInputs.length; i++) {
+      let input = phoneInputs[i]
+      input.addEventListener('input', testInputListener)
+      // input.addEventListener('keydown', onPhoneKeyDown)
+      // input.addEventListener('paste', onPhonePaste)
     }
   }, [])
+  // let [inputValue, setInputValue] = useState('')
+
+  const testInputListener = (e) => {
+    let input = e.target,
+      inputNumbersValue = getInputNumbersValue(input)
+    if (!inputNumbersValue) {
+      input.value = '1'
+    }
+    console.log(input.value)
+  }
+
   const getInputNumbersValue = (input) => {
     return input.value.replace(/\D/g, '')
   }
   const onPhoneKeyDown = (e) => {
     let inputValue = e.target.value.replace(/\D/g, '')
     if (e.keyCode == 8 && inputValue.length == 1) {
-      props.setFieldValue('phone', '')
+      e.target.value = ''
     }
   }
   const onPhonePaste = (e) => {
@@ -68,29 +59,26 @@ const PhoneInput = ({ field, form, ...props }) => {
     if (pasted) {
       let pastedText = pasted.getData('Text')
       if (/\D/g.test(pastedText)) {
-        props.setFieldValue('phone', inputNumbersValue)
+        input.value = inputNumbersValue
         return
       }
     }
   }
   const onPhoneInput = (e) => {
-    console.log('called')
     let input = e.target,
       inputNumbersValue = getInputNumbersValue(input),
       formattedInputValue = '',
       selectionStart = input.selectionStart
-    console.log(selectionStart)
     if (!inputNumbersValue) {
-      // return (input.value = '')
-      return props.setFieldValue('phone', '')
+      return (input.value = '')
     }
-    // if (input.value.length != selectionStart) {
-    //   if (e.data && /\D/g.test(e.data)) {
-    //     input.value = inputNumbersValue
-    //     // props.setFieldValue('phone', inputNumbersValue)
-    //   }
-    //   return
-    // }
+    if (input.value.length != selectionStart) {
+      if (e.data && /\D/g.test(e.data)) {
+        input.value = inputNumbersValue
+      }
+      return
+      // console.log('редактирование в середине строки', e)
+    }
     if (['7', '8', '9'].indexOf(inputNumbersValue[0]) > -1) {
       if (inputNumbersValue[0] == '9') {
         inputNumbersValue = '7' + inputNumbersValue
@@ -114,31 +102,13 @@ const PhoneInput = ({ field, form, ...props }) => {
       formattedInputValue = '+' + inputNumbersValue.substring(0, 16)
       // Not Russian number
     }
-    // input.value = formattedInputValue
-    props.setFieldValue('phone', formattedInputValue)
-    // setFieldValue('phone', formattedInputValue)
+    console.log(formattedInputValue)
+    // input.value = formattedInputValue //Инпут полностью очищается здесь, скорее всего делается с использованием useState
+    input.value = formattedInputValue
+    // console.log(input.value)
+    // console.log(inputNumbersValue)
   }
 
-  return (
-    <div className="form__group">
-      <input
-        type="tel"
-        className="form__input"
-        spellCheck="false"
-        required
-        maxLength="18"
-        {...field}
-        // value={inputVal}
-        // onChange={(values) => setInputVal(values.currentTarget.value)}
-        // {...props}
-        // onChange={props.onChange}
-        ref={inputEl}
-      />
-      <label className="form__label">Телефон</label>
-    </div>
-  )
-}
-const OrderPage = (props) => {
   const submit = (values) => {
     console.log(values, props.items)
   }
@@ -158,16 +128,19 @@ const OrderPage = (props) => {
         }}
         onSubmit={submit}
       >
-        {(props) => (
+        {() => (
           <Form className="form">
             <Field type="text" name="name" label="Имя" component={Input} />
             <Field
+              type="tel"
               name="phone"
-              component={PhoneInput}
-              setFieldValue={props.setFieldValue}
-              // onChange={props.setFieldValue('phone', '7')}
-            ></Field>
-
+              label="Телефон"
+              component={Input}
+              maxLength="18"
+              // inpValue={inputValue}
+              // handleChange={testInputListener}
+              // handleChange={testInputListener}
+            />
             <Field type="text" name="address" label="Адрес" component={Input} />
             <div className="form__wrapper-input">
               <Field
