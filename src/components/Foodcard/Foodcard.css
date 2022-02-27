@@ -34,6 +34,8 @@
 .menu .foodcards-item-bottom-description p {
   margin: 0;
   position: absolute;
+  text-align: center;
+  width: calc(100% - 0.8rem);
   top: 50%;
   transform: translateY(-50%);
   line-height: 100%;
