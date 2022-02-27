@@ -51,7 +51,7 @@
 }
 .main-cart__button-wrapper {
   display: grid;
-  grid-template-columns: 3fr 2fr;
+  grid-template-columns: 1fr 1fr;
   grid-column-gap: 1.5rem;
 }
 .main-cart-item-wrap-amount {

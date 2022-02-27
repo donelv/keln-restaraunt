@@ -4,8 +4,6 @@ import './OrderPage.css'
 import { connect } from 'react-redux'
 import Header from '../Header/Header'
 const Input = ({ field, form, ...props }) => {
-  // console.log(props)
-  // console.log(inputEl)
   return (
     <div className="form__group">
       <input
@@ -13,44 +11,19 @@ const Input = ({ field, form, ...props }) => {
         className="form__input"
         spellCheck="false"
         {...field}
-        // {...props}
-        // onChange={props.onChange}
-        required
-        // ref={props.innerRef}
-        // placeholder={props.placeHolder}
-        // maxLength={props.maxLength}
-        // value={props.inpValue}
-        // onChange={props.handleChange}
+        placeholder=" "
+        required={props.required}
       />
       <label className="form__label">{props.label}</label>
     </div>
   )
 }
 const PhoneInput = ({ field, form, ...props }) => {
-  // let [inputVal, setInputVal] = useState('1')
-  // console.log(props)
-  // props.onChange()
-  // console.log(field)
   const inputEl = useRef()
   useEffect(() => {
-    // console.log('usef')
-    // props.setFieldValue('phone', '7')
-    // let phoneInputs = document.querySelectorAll('input[name="phone"]')
-    // for (var i = 0; i < phoneInputs.length; i++) {
-    //   let input = phoneInputs[i]
-    //   input.addEventListener('input', onPhoneInput)
-    //   input.addEventListener('keydown', onPhoneKeyDown)
-    //   input.addEventListener('paste', onPhonePaste)
-    // }
-    // console.log(inputEl)
     inputEl.current.addEventListener('input', onPhoneInput)
     inputEl.current.addEventListener('keydown', onPhoneKeyDown)
     inputEl.current.addEventListener('paste', onPhonePaste)
-    return () => {
-      inputEl.current.removeListener('input', onPhoneInput)
-      inputEl.current.removeListener('keydown', onPhoneKeyDown)
-      inputEl.current.removeListener('paste', onPhonePaste)
-    }
   }, [])
   const getInputNumbersValue = (input) => {
     return input.value.replace(/\D/g, '')
@@ -81,16 +54,8 @@ const PhoneInput = ({ field, form, ...props }) => {
       selectionStart = input.selectionStart
     console.log(selectionStart)
     if (!inputNumbersValue) {
-      // return (input.value = '')
       return props.setFieldValue('phone', '')
     }
-    // if (input.value.length != selectionStart) {
-    //   if (e.data && /\D/g.test(e.data)) {
-    //     input.value = inputNumbersValue
-    //     // props.setFieldValue('phone', inputNumbersValue)
-    //   }
-    //   return
-    // }
     if (['7', '8', '9'].indexOf(inputNumbersValue[0]) > -1) {
       if (inputNumbersValue[0] == '9') {
         inputNumbersValue = '7' + inputNumbersValue
@@ -114,9 +79,7 @@ const PhoneInput = ({ field, form, ...props }) => {
       formattedInputValue = '+' + inputNumbersValue.substring(0, 16)
       // Not Russian number
     }
-    // input.value = formattedInputValue
     props.setFieldValue('phone', formattedInputValue)
-    // setFieldValue('phone', formattedInputValue)
   }
 
   return (
@@ -128,10 +91,7 @@ const PhoneInput = ({ field, form, ...props }) => {
         required
         maxLength="18"
         {...field}
-        // value={inputVal}
-        // onChange={(values) => setInputVal(values.currentTarget.value)}
-        // {...props}
-        // onChange={props.onChange}
+        placeholder=" "
         ref={inputEl}
       />
       <label className="form__label">Телефон</label>
@@ -160,34 +120,54 @@ const OrderPage = (props) => {
       >
         {(props) => (
           <Form className="form">
-            <Field type="text" name="name" label="Имя" component={Input} />
+            <Field
+              type="text"
+              name="name"
+              label="Имя"
+              component={Input}
+              required
+            />
             <Field
               name="phone"
               component={PhoneInput}
               setFieldValue={props.setFieldValue}
-              // onChange={props.setFieldValue('phone', '7')}
             ></Field>
 
-            <Field type="text" name="address" label="Адрес" component={Input} />
+            <Field
+              type="text"
+              name="address"
+              label="Адрес"
+              component={Input}
+              required
+            />
             <div className="form__wrapper-input">
               <Field
                 type="text"
                 name="entrance"
                 label="Подъезд"
                 component={Input}
+                required
               />
               <Field
                 type="text"
                 name="domofon"
                 label="Домофон"
                 component={Input}
+                required
               />
-              <Field type="text" name="floor" label="Этаж" component={Input} />
+              <Field
+                type="text"
+                name="floor"
+                label="Этаж"
+                component={Input}
+                required
+              />
               <Field
                 type="text"
                 name="flat"
                 label="Кв./Офис"
                 component={Input}
+                required
               />
             </div>
             <Field

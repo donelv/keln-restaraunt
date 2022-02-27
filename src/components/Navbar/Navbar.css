@@ -81,10 +81,11 @@
     list-style: none;
     overflow-x: scroll;
     -webkit-overflow-scrolling: touch;
-    /*-ms-overflow-style: -ms-autohiding-scrollbar;*/
+    /* hide scrollbar */
+    -ms-overflow-style: none;
     scrollbar-width: none;
   }
-  .mynavbar--wrap::-webkit-scrollbar {
+  .mynavbar-wrap::-webkit-scrollbar {
     display: none;
   }
   .mynavbar-wrap ul {

@@ -18,6 +18,7 @@
   background: #f6f6f6;
   padding-left: 2rem;
   padding-top: 1.5rem;
+  /* box-shadow: 0rem 1rem 2rem 0.2rem #00000040; */
 }
 .form__group .form__label {
   position: absolute;
@@ -30,9 +31,8 @@
 .form__input:focus {
   outline: none;
 }
-.form__input:focus ~ .form__label,
-.form__input:valid ~ .form__label,
-.form__input:optional ~ .form__label {
+.form__input:focus + .form__label,
+.form__input:not(:placeholder-shown) + .form__label {
   top: 0.5rem;
   font-size: 1.2rem;
   color: #909090;
