@@ -98,21 +98,14 @@ const PhoneInput = ({ field, form, ...props }) => {
     </div>
   )
 }
-const testClick = (cart) => {
-  for (var i = 0; i < cart['cart'].length; i++) {
-    console.log(cart['cart'][i])
-  }
-  // let cartMap = Object.entries(cart).map((item) => {
-  //   return item
-  // })
-}
 const OrderPage = (props) => {
   const submit = (values) => {
-    // const orderDate = new Date()
     axios
-      .get('http://worldtimeapi.org/api/timezone/Asia/Yekaterinburg')
+      // .get('http://worldtimeapi.org/api/timezone/Asia/Yekaterinburg')
+      .get(
+        'https://www.timeapi.io/api/TimeZone/zone?timezone=Asia/Yekaterinburg'
+      )
       .then((response) => {
-        // let data = response.json()
         setOrder({
           ...values,
           cart: props.items,
@@ -201,15 +194,6 @@ const OrderPage = (props) => {
           </Form>
         )}
       </Formik>
-      <button
-        onClick={() =>
-          testClick({
-            cart: props.items,
-          })
-        }
-      >
-        TESTBUTTON
-      </button>
     </div>
   )
 }
