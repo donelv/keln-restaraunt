@@ -6,6 +6,7 @@
   font-size: 1.6rem;
   padding: 2rem 1.5rem;
   background-color: rgba(231, 203, 134, 0.5);
+  min-height: calc(100vh - 26rem);
 }
 .form__group {
   position: relative;

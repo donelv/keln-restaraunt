@@ -30,6 +30,7 @@ const reducer = combineReducers({
   menu: menuReducer,
 })
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
+window.scrollTo(0, document.body.scrollHeight)
 cache.getAll().then((data) => {
   const store = createStore(
     reducer,

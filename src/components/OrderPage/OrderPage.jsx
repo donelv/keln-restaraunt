@@ -3,6 +3,8 @@ import { Formik, Form, Field } from 'formik'
 import './OrderPage.css'
 import { connect } from 'react-redux'
 import Header from '../Header/Header'
+import * as axios from 'axios'
+import { setOrder } from '../../db'
 const Input = ({ field, form, ...props }) => {
   return (
     <div className="form__group">
@@ -47,12 +49,10 @@ const PhoneInput = ({ field, form, ...props }) => {
     }
   }
   const onPhoneInput = (e) => {
-    console.log('called')
     let input = e.target,
       inputNumbersValue = getInputNumbersValue(input),
       formattedInputValue = '',
       selectionStart = input.selectionStart
-    console.log(selectionStart)
     if (!inputNumbersValue) {
       return props.setFieldValue('phone', '')
     }
@@ -98,9 +98,28 @@ const PhoneInput = ({ field, form, ...props }) => {
     </div>
   )
 }
+const testClick = (cart) => {
+  for (var i = 0; i < cart['cart'].length; i++) {
+    console.log(cart['cart'][i])
+  }
+  // let cartMap = Object.entries(cart).map((item) => {
+  //   return item
+  // })
+}
 const OrderPage = (props) => {
   const submit = (values) => {
-    console.log(values, props.items)
+    // const orderDate = new Date()
+    axios
+      .get('http://worldtimeapi.org/api/timezone/Asia/Yekaterinburg')
+      .then((response) => {
+        // let data = response.json()
+        setOrder({
+          ...values,
+          cart: props.items,
+          total: props.sum,
+          orderDate: response.data.datetime,
+        })
+      })
   }
   return (
     <div>
@@ -182,12 +201,22 @@ const OrderPage = (props) => {
           </Form>
         )}
       </Formik>
+      <button
+        onClick={() =>
+          testClick({
+            cart: props.items,
+          })
+        }
+      >
+        TESTBUTTON
+      </button>
     </div>
   )
 }
 let mapStateToProps = (state) => {
   return {
     items: state.cart.items,
+    sum: state.cart.sum,
   }
 }
 export default connect(mapStateToProps, {})(OrderPage)

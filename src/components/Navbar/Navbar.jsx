@@ -16,7 +16,6 @@ const navItems = {
 }
 const Navbar = (props) => {
   const setNavbarsPosition = () => {
-    console.log('called setNavbarsPosition')
     document.getElementsByClassName(
       `mynavbar-wrap-${props.activeCategory}`
     )[0].scrollLeft = 0

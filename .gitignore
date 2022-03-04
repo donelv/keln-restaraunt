@@ -6,6 +6,8 @@
 /template
 .pnp.js
 
+/functions
+
 # testing
 /coverage
 
