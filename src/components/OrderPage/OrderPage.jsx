@@ -5,6 +5,9 @@ import { connect } from 'react-redux'
 import Header from '../Header/Header'
 import * as axios from 'axios'
 import { setOrder } from '../../db'
+import Modal from '../Modal/Modal'
+import { useState } from 'react'
+// const deliveryWorking = true
 const Input = ({ field, form, ...props }) => {
   return (
     <div className="form__group">
@@ -98,24 +101,72 @@ const PhoneInput = ({ field, form, ...props }) => {
     </div>
   )
 }
+
 const OrderPage = (props) => {
-  const submit = (values) => {
-    axios
-      // .get('http://worldtimeapi.org/api/timezone/Asia/Yekaterinburg')
-      .get(
-        'https://www.timeapi.io/api/TimeZone/zone?timezone=Asia/Yekaterinburg'
-      )
-      .then((response) => {
-        setOrder({
-          ...values,
-          cart: props.items,
-          total: props.sum,
-          orderDate: response.data.datetime,
-        })
+  const [openModal, setOpenModal] = useState(false)
+  const [modalText, setModalText] = useState('')
+  const submit = async (values) => {
+    fetch(
+      `https://api.ipgeolocation.io/timezone?apiKey=${process.env.REACT_APP_TIME_API_KEY}&tz=Asia/Yekaterinburg`
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        let deliveryWorking = true
+        let day = data.date_time_txt
+          .slice(0, data.date_time_txt.search(','))
+          .toLowerCase()
+        let currentHour = parseInt(data.time_24.slice(0, 2), 10)
+
+        // day = 'friday'
+        // currentHour = 14
+
+        if (day.match(/^(friday|saturday|sunday)$/) && currentHour < 1) {
+          // shouldSubmit = true
+        } else if (
+          day.match(/^(monday|tuesday|wednesday|sunday)$/) &&
+          currentHour >= 12 &&
+          currentHour < 23
+        ) {
+          // shouldSubmit = true
+        } else if (
+          day.match(/^(thursday|friday|saturday)$/) &&
+          currentHour >= 12
+        ) {
+          // shouldSubmit = true
+        } else {
+          // shouldSubmit = false
+          setModalText('Доставка недоступна')
+          setOpenModal(true)
+          // alert('Доставка НЕДОСТУПНА, сегодня ' + day + ' ' + currentHour)
+          return
+        }
+
+        if (deliveryWorking) {
+          setOrder({
+            ...values,
+            cart: props.items,
+            total: props.sum,
+            orderDate: data.date_time,
+          })
+        } else {
+          // shouldSubmit = false
+          setModalText('Доставка недоступна')
+          setOpenModal(true)
+          // alert('Доставка НЕДОСТУПНА, сегодня ' + day + ' ' + currentHour)
+          return
+        }
       })
   }
   return (
     <div>
+      {/* <button
+        onClick={() => {
+          setOpenModal(true)
+        }}
+      >
+        Открыть Modal
+      </button> */}
+      {openModal && <Modal closeModal={setOpenModal} info={modalText} />}
       <Header whatPage={'Заказ'} />
       <Formik
         initialValues={{

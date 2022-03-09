@@ -36,23 +36,7 @@ export const setOrder = async (data) => {
   })
   htmlString += `<tr><td colspan="2"><b>Итого:</b></td><td>${data.total}₽</td></tr>`
   //RANDOM ID FOR DOC
-  // const ordersRef = await addDoc(collection(db, 'orders'), {
-  //   name: data.name,
-  //   phone: data.phone,
-  //   address: data.address,
-  //   entrance: data.entrance,
-  //   floor: data.floor,
-  //   flat: data.flat,
-  //   domofon: data.domofon,
-  //   comment: data.comment,
-  //   date: data.orderDate.substring(0, 19),
-  //   cart: cartInfo,
-  //   total: data.total,
-  // })
-  // console.log('Document written with ID: ', docRef.id)
-
-  const ordersRef = doc(db, 'orders', 'test')
-  setDoc(ordersRef, {
+  addDoc(collection(db, 'orders'), {
     name: data.name,
     phone: data.phone,
     address: data.address,
@@ -61,7 +45,7 @@ export const setOrder = async (data) => {
     flat: data.flat,
     domofon: data.domofon,
     comment: data.comment,
-    date: data.orderDate.substring(0, 19),
+    date: data.orderDate,
     cart: cartInfo,
     total: data.total,
     to: ['vaganovdd2@gmail.com'],
@@ -91,4 +75,45 @@ export const setOrder = async (data) => {
       </code>`,
     },
   }).then(() => console.log('Заказ в Firestore'))
+
+  // const ordersRef = doc(db, 'orders', 'test')
+  // setDoc(ordersRef, {
+  //   name: data.name,
+  //   phone: data.phone,
+  //   address: data.address,
+  //   entrance: data.entrance,
+  //   floor: data.floor,
+  //   flat: data.flat,
+  //   domofon: data.domofon,
+  //   comment: data.comment,
+  //   date: data.orderDate,
+  //   cart: cartInfo,
+  //   total: data.total,
+  //   to: ['vaganovdd2@gmail.com'],
+  //   message: {
+  //     subject: `Заказ от ${data.orderDate.substring(0, 19)}`,
+  //     text: ``,
+  //     html: `<code style="font-family: Arial; font-size: 16px; line-height: 26px;">
+  //       <body>
+  //         <div><b>Имя:</b> ${data.name}</div>
+  //         <div><b>Телефон:</b> ${data.phone}</div>
+  //         <div><b>Адрес:</b> ${data.address}</div>
+  //         <div><b>Подъезд:</b> ${data.entrance}</div>
+  //         <div><b>Этаж:</b> ${data.floor}</div>
+  //         <div><b>Домофон:</b> ${data.domofon}</div>
+  //         <div><b>Кв./Офис:</b> ${data.flat}</div>
+  //         <div><b>Время Заказа:</b> ${data.orderDate.substring(0, 19)}</div>
+  //         <div><b>Комментарий:</b> ${data.comment}</div>
+  //         <table border="1" bordercolor="grey" cellpadding="6" cellspacing="0" style="margin-top: 20px">
+  //           <tr>
+  //             <th>Наименование</th>
+  //             <th>Кол-во</th>
+  //             <th>Цена</th>
+  //           </tr>
+  //           ${htmlString}
+  //         </table>
+  //       </body>
+  //     </code>`,
+  //   },
+  // }).then(() => console.log('Заказ в Firestore', data.orderDate))
 }
