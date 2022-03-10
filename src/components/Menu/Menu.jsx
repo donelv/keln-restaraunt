@@ -38,8 +38,6 @@ const Menu = (props) => {
   })
   return (
     <div>
-      <Header whatPage={'Меню'} />
-      {/* <Navbar /> */}
       <main className="menu">
         <div id="foodcards">
           <div id="goods">{res}</div>

@@ -12,7 +12,7 @@
   padding: 2.5rem;
 }
 .modalContainer {
-  width: 500px;
+  width: 43rem;
   /* transition: 12ms; */
   /* height: 500px; */
   border-radius: 12px;
@@ -22,13 +22,24 @@
   flex-direction: column;
   padding: 25px;
   align-items: center;
+  text-align: center;
 }
 .modal__title {
   font-family: 'GothicRus', sans-serif;
   font-size: 2.4rem;
 }
+.modal_dop-info {
+  text-align: center;
+  font-family: 'Montserrat-Regular', sans-serif;
+  font-size: 1.2rem;
+}
+.modal_dop-info span {
+  display: block;
+  font-family: 'Montserrat-Medium', sans-serif;
+  font-size: 1.4rem;
+}
 .okButton {
-  width: 100%;
+  width: 80%;
   height: 5rem;
   background: #202020;
   color: white;

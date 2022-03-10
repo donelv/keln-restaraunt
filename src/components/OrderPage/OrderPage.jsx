@@ -9,6 +9,7 @@ import Modal from '../Modal/Modal'
 import { useState } from 'react'
 import { clearCart } from '../../redux/cart-reducer'
 import Loader from '../Loader/Loader'
+import { useNavigate } from 'react-router-dom'
 // const deliveryWorking = true
 const Input = ({ field, form, ...props }) => {
   return (
@@ -103,15 +104,14 @@ const PhoneInput = ({ field, form, ...props }) => {
     </div>
   )
 }
-
 const OrderPage = (props) => {
   const [isLoading, setIsLoading] = useState(false)
-
   const [openModal, setOpenModal] = useState(false)
-  const [submitSuccess, setSubmitSuccess] = useState(false)
-
-  const [modalText, setModalText] = useState('')
-  const [modalTitle, setModalTitle] = useState('')
+  let navigate = useNavigate()
+  const routeChange = () => {
+    let path = `/cart/success`
+    navigate(path)
+  }
   const submit = async (values) => {
     setIsLoading(true)
     fetch(
@@ -137,41 +137,26 @@ const OrderPage = (props) => {
         } else {
           deliveryWorking = false
         }
-
         if (deliveryWorking) {
-          console.log('Заказ оформлен')
-          setModalTitle('Успешно')
-          setModalText('Ваш заказ оформлен')
-          setSubmitSuccess(true)
-          setOpenModal(true)
-
           setOrder({
             ...values,
             cart: props.items,
             total: props.sum,
             orderDate: data.date_time,
-          }).then(() => console.log('Заказ в firestore'))
+          }).then(() => {
+            props.clearCart()
+            routeChange()
+          })
         } else {
-          setModalText('Доставка недоступна')
           setOpenModal(true)
-          // alert('Доставка НЕДОСТУПНА, сегодня ' + day + ' ' + currentHour)
+          setIsLoading(false)
           return
         }
       })
   }
   return (
     <div>
-      {openModal && (
-        <Modal
-          closeModal={setOpenModal}
-          info={modalText}
-          title={modalTitle}
-          success={submitSuccess}
-          clearCart={props.clearCart}
-        />
-      )}
-
-      <Header whatPage={'Заказ'} />
+      {openModal && <Modal closeModal={setOpenModal} />}
       <Formik
         initialValues={{
           name: '',
