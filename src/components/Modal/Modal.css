@@ -13,6 +13,7 @@
 }
 .modalContainer {
   width: 500px;
+  /* transition: 12ms; */
   /* height: 500px; */
   border-radius: 12px;
   background-color: white;

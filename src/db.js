@@ -36,7 +36,7 @@ export const setOrder = async (data) => {
   })
   htmlString += `<tr><td colspan="2"><b>Итого:</b></td><td>${data.total}₽</td></tr>`
   //RANDOM ID FOR DOC
-  addDoc(collection(db, 'orders'), {
+  return addDoc(collection(db, 'orders'), {
     name: data.name,
     phone: data.phone,
     address: data.address,
@@ -74,7 +74,7 @@ export const setOrder = async (data) => {
         </body>
       </code>`,
     },
-  }).then(() => console.log('Заказ в Firestore'))
+  })
 
   // const ordersRef = doc(db, 'orders', 'test')
   // setDoc(ordersRef, {

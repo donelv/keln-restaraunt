@@ -19,6 +19,7 @@ const actionMap = {
   INCREASE_ITEM: ['cart'],
   DECREASE_ITEM: ['cart'],
   DELETE_ITEM: ['cart'],
+  CLEAR_CART: ['cart'],
 }
 const persistMiddleware = getPersistMiddleware({
   cacheFn: cache.set, // specifies we would like to set the cache

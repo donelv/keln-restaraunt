@@ -1,0 +1,36 @@
+@keyframes pulse {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0.3;
+    transform: scale(0.75);
+  }
+}
+
+/* PULSE BUBBLES */
+
+.pulse-container {
+  width: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pulse-bubble {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: white;
+}
+
+.pulse-bubble-1 {
+  animation: pulse 0.4s ease 0s infinite alternate;
+}
+.pulse-bubble-2 {
+  animation: pulse 0.4s ease 0.2s infinite alternate;
+}
+.pulse-bubble-3 {
+  animation: pulse 0.4s ease 0.4s infinite alternate;
+}

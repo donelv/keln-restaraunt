@@ -4,6 +4,7 @@ const DELETE_ITEM = 'DELETE_ITEM'
 const INCREASE_ITEM = 'INCREASE_ITEM'
 const DECREASE_ITEM = 'DECREASE_ITEM'
 const COUNT_SUM_OF_THE_CART = 'COUNT_SUM_OF_THE_CART'
+const CLEAR_CART = 'CLEAR_CART'
 let initialState = {
   sum: 0,
   items: [
@@ -69,6 +70,12 @@ const cartReducer = (state = initialState, action) => {
         sum,
       }
     }
+    case CLEAR_CART: {
+      return {
+        sum: 0,
+        items: [],
+      }
+    }
     default:
       return state
   }
@@ -89,6 +96,9 @@ const increaseItemAC = (itemId) => ({
 const decreaseItemAC = (itemId) => ({
   type: DECREASE_ITEM,
   itemId,
+})
+export const clearCart = () => ({
+  type: CLEAR_CART,
 })
 export const countSumOfTheCartAC = () => ({
   type: COUNT_SUM_OF_THE_CART,

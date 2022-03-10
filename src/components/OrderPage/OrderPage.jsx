@@ -7,6 +7,8 @@ import * as axios from 'axios'
 import { setOrder } from '../../db'
 import Modal from '../Modal/Modal'
 import { useState } from 'react'
+import { clearCart } from '../../redux/cart-reducer'
+import Loader from '../Loader/Loader'
 // const deliveryWorking = true
 const Input = ({ field, form, ...props }) => {
   return (
@@ -103,9 +105,15 @@ const PhoneInput = ({ field, form, ...props }) => {
 }
 
 const OrderPage = (props) => {
+  const [isLoading, setIsLoading] = useState(false)
+
   const [openModal, setOpenModal] = useState(false)
+  const [submitSuccess, setSubmitSuccess] = useState(false)
+
   const [modalText, setModalText] = useState('')
+  const [modalTitle, setModalTitle] = useState('')
   const submit = async (values) => {
+    setIsLoading(true)
     fetch(
       `https://api.ipgeolocation.io/timezone?apiKey=${process.env.REACT_APP_TIME_API_KEY}&tz=Asia/Yekaterinburg`
     )
@@ -116,40 +124,34 @@ const OrderPage = (props) => {
           .slice(0, data.date_time_txt.search(','))
           .toLowerCase()
         let currentHour = parseInt(data.time_24.slice(0, 2), 10)
-
-        // day = 'friday'
-        // currentHour = 14
-
         if (day.match(/^(friday|saturday|sunday)$/) && currentHour < 1) {
-          // shouldSubmit = true
         } else if (
           day.match(/^(monday|tuesday|wednesday|sunday)$/) &&
           currentHour >= 12 &&
           currentHour < 23
         ) {
-          // shouldSubmit = true
         } else if (
           day.match(/^(thursday|friday|saturday)$/) &&
           currentHour >= 12
         ) {
-          // shouldSubmit = true
         } else {
-          // shouldSubmit = false
-          setModalText('Доставка недоступна')
-          setOpenModal(true)
-          // alert('Доставка НЕДОСТУПНА, сегодня ' + day + ' ' + currentHour)
-          return
+          deliveryWorking = false
         }
 
         if (deliveryWorking) {
+          console.log('Заказ оформлен')
+          setModalTitle('Успешно')
+          setModalText('Ваш заказ оформлен')
+          setSubmitSuccess(true)
+          setOpenModal(true)
+
           setOrder({
             ...values,
             cart: props.items,
             total: props.sum,
             orderDate: data.date_time,
-          })
+          }).then(() => console.log('Заказ в firestore'))
         } else {
-          // shouldSubmit = false
           setModalText('Доставка недоступна')
           setOpenModal(true)
           // alert('Доставка НЕДОСТУПНА, сегодня ' + day + ' ' + currentHour)
@@ -159,14 +161,16 @@ const OrderPage = (props) => {
   }
   return (
     <div>
-      {/* <button
-        onClick={() => {
-          setOpenModal(true)
-        }}
-      >
-        Открыть Modal
-      </button> */}
-      {openModal && <Modal closeModal={setOpenModal} info={modalText} />}
+      {openModal && (
+        <Modal
+          closeModal={setOpenModal}
+          info={modalText}
+          title={modalTitle}
+          success={submitSuccess}
+          clearCart={props.clearCart}
+        />
+      )}
+
       <Header whatPage={'Заказ'} />
       <Formik
         initialValues={{
@@ -239,8 +243,8 @@ const OrderPage = (props) => {
               label="Комментарий"
               component={Input}
             />
-            <button type="submit" className="form__button">
-              Подтвердить заказ
+            <button type="submit" className="form__button" disabled={isLoading}>
+              {isLoading ? <Loader /> : 'Подтвердить заказ'}
             </button>
           </Form>
         )}
@@ -254,4 +258,4 @@ let mapStateToProps = (state) => {
     sum: state.cart.sum,
   }
 }
-export default connect(mapStateToProps, {})(OrderPage)
+export default connect(mapStateToProps, { clearCart })(OrderPage)

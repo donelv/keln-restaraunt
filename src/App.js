@@ -17,14 +17,17 @@ const App = (props) => {
         <Route exact path={'/'} element={<Navigate to={'/menu'} />} />
         <Route path={'menu'} element={<MenuContainer />} />
         <Route path={'cart'} element={<Cart />} />
-        <Route path={'cart/order'} element={<OrderPage />} />
+        <Route
+          path={'cart/order'}
+          element={props.items.length > 0 ? <OrderPage /> : <Cart />}
+        />
         <Route path={'*'} element={<div>404 undefined</div>} />
       </Routes>
       <Footer />
     </>
   )
 }
-const mapStateToProps = (state) => ({})
+const mapStateToProps = (state) => ({ items: state.cart.items })
 export default connect(mapStateToProps, {
   getMenu,
 })(App)
