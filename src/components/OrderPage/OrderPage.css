@@ -1,8 +1,9 @@
 .form-wrapper {
   background-color: rgba(231, 203, 134, 0.5);
   min-height: calc(100vh - 26rem);
-  display: grid;
   align-items: center;
+  display: flex;
+  justify-content: center;
 }
 .form {
   display: grid;

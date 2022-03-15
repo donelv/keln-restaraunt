@@ -1,13 +1,9 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Foodcard from '../Foodcard/Foodcard'
 import './Menu.css'
 import Header from '../Header/Header'
 import Navbar from '../Navbar/Navbar'
 const Menu = (props) => {
-  window.scrollTo({
-    top: 0,
-    behavior: 'instant',
-  })
   let res = Object.keys(props.menuItems).map((category) => {
     return (
       <div key={`navbar_${category}`}>

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './Cart.css'
 import Header from '../Header/Header'
 import CartItemContainer from '../CartItem/CartItemContainer'
@@ -6,10 +6,12 @@ import { connect } from 'react-redux'
 import EmptyCart from '../EmptyCart/EmptyCart'
 import { Link } from 'react-router-dom'
 const Cart = (props) => {
-  window.scrollTo({
-    top: 0,
-    behavior: 'instant',
-  })
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'instant',
+    })
+  }, [])
   return (
     <div className="main">
       <div className="main-cart">

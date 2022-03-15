@@ -105,10 +105,13 @@ const PhoneInput = ({ field, form, ...props }) => {
   )
 }
 const OrderPage = (props) => {
-  window.scrollTo({
-    top: 0,
-    behavior: 'instant',
-  })
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'instant',
+    })
+  }, [])
+
   const [isLoading, setIsLoading] = useState(false)
   const [openModal, setOpenModal] = useState(false)
   let navigate = useNavigate()
