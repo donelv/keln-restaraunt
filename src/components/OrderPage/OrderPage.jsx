@@ -105,6 +105,10 @@ const PhoneInput = ({ field, form, ...props }) => {
   )
 }
 const OrderPage = (props) => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'instant',
+  })
   const [isLoading, setIsLoading] = useState(false)
   const [openModal, setOpenModal] = useState(false)
   let navigate = useNavigate()
@@ -147,6 +151,10 @@ const OrderPage = (props) => {
             props.clearCart()
             routeChange()
           })
+          // .catch(() => {
+          //   setOpenModal(true)
+          //   setIsLoading(false)
+          // })
         } else {
           setOpenModal(true)
           setIsLoading(false)
@@ -155,7 +163,7 @@ const OrderPage = (props) => {
       })
   }
   return (
-    <div>
+    <div className="form-wrapper">
       {openModal && <Modal closeModal={setOpenModal} />}
       <Formik
         initialValues={{
