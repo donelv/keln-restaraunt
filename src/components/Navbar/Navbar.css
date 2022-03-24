@@ -1,50 +1,18 @@
 .mynavbar {
-  /*margin-top: 7rem*/
-  background-color: #e7cb86;
+  /* background-color: #e7cb86; */
+  background-color: #333333;
   position: sticky;
-  top: 7rem;
-  /* top: 0px; */
+  top: 8rem;
   height: 7rem;
   width: 100%;
   z-index: 999;
 }
-
 .mynavbar-wrap {
   height: 100%;
   width: auto;
   text-align: center;
   position: relative;
 }
-/*
-.mynavbar-with-scroll {
-  /*height: 3rem;*/
-/*overflow-x: scroll;*/
-/*overflow-x: scroll;
-  white-space: nowrap;
-  -webkit-overflow-scrolling: touch;//
-  display: flex;
-  list-style: none;
-  overflow-x: scroll;
-  -webkit-overflow-scrolling: touch;
-  -ms-overflow-style: -ms-autohiding-scrollbar;
-  scrollbar-width: none;
-}
-.mynavbar-with-scroll ul {
-  //display: inline;//
-  white-space: nowrap;
-  position: relative;
-}
-.mynavbar-with-scroll::-webkit-scrollbar {
-  display: none;
-}
-.mynavbar-with-scroll li {
-  display: inline-block;
-  margin-right: 2rem;
-  font-family: 'GothicRus', sans-serif;
-  font-size: 2rem;
-  color: #9b8858;
-}
-*/
 .mynavbar-wrap ul {
   position: absolute;
   top: 50%;
@@ -57,10 +25,12 @@
   margin-right: 2rem;
   font-family: 'GothicRus', sans-serif;
   font-size: 2rem;
-  color: #9b8858;
+  /* color: #9b8858; */
+  color: #dedede;
 }
 .mynavbar-wrap li .active {
-  color: black;
+  /* color: black; */
+  color: #d0a04f;
   text-decoration: none;
 }
 .mynavbar_item_a:hover {

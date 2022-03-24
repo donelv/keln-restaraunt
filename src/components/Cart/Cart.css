@@ -1,5 +1,6 @@
 .main {
-  background-color: rgba(231, 203, 134, 0.5);
+  /* background-color: rgba(231, 203, 134, 0.5); */
+  background-color: #eaeaea;
   min-height: calc(100vh - 26rem);
 }
 .main-cart {

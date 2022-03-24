@@ -1,18 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import './Navbar.css'
 import NavbarItem from '../NavbarItem/NavbarItem'
+import { categories } from '../../categories'
 const navItems = {
-  salads: null,
-  coldSnacks: null,
-  hotSnacks: null,
-  soups: null,
-  garnish: null,
-  desserts: null,
-  meatDishes: null,
-  fishDishes: null,
-  steamedDishes: null,
-  sausages: null,
-  steaks: null,
+  ...categories,
 }
 const Navbar = (props) => {
   const setNavbarsPosition = () => {

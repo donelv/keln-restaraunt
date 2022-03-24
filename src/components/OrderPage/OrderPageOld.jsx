@@ -4,7 +4,6 @@ import './OrderPage.css'
 import { connect } from 'react-redux'
 import Header from '../Header/Header'
 const Input = ({ field, form, ...props }) => {
-  // console.log(props)
   return (
     <div className="form__group">
       <input
@@ -15,8 +14,6 @@ const Input = ({ field, form, ...props }) => {
         required
         placeholder={props.placeHolder}
         maxLength={props.maxLength}
-        // value={props.inpValue || undefined}
-        // onChange={props.handleChange || undefined}
       />
       <label className="form__label">{props.label}</label>
     </div>
@@ -28,11 +25,8 @@ const OrderPage = (props) => {
     for (var i = 0; i < phoneInputs.length; i++) {
       let input = phoneInputs[i]
       input.addEventListener('input', testInputListener)
-      // input.addEventListener('keydown', onPhoneKeyDown)
-      // input.addEventListener('paste', onPhonePaste)
     }
   }, [])
-  // let [inputValue, setInputValue] = useState('')
 
   const testInputListener = (e) => {
     let input = e.target,
@@ -77,7 +71,6 @@ const OrderPage = (props) => {
         input.value = inputNumbersValue
       }
       return
-      // console.log('редактирование в середине строки', e)
     }
     if (['7', '8', '9'].indexOf(inputNumbersValue[0]) > -1) {
       if (inputNumbersValue[0] == '9') {
@@ -102,11 +95,7 @@ const OrderPage = (props) => {
       formattedInputValue = '+' + inputNumbersValue.substring(0, 16)
       // Not Russian number
     }
-    console.log(formattedInputValue)
-    // input.value = formattedInputValue //Инпут полностью очищается здесь, скорее всего делается с использованием useState
     input.value = formattedInputValue
-    // console.log(input.value)
-    // console.log(inputNumbersValue)
   }
 
   const submit = (values) => {

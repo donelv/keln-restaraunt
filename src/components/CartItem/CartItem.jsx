@@ -24,7 +24,7 @@ const CartItem = (props) => {
           <span>{props.price}₽</span>
         </div>
 
-        <p>{props.description}</p>
+        <p>{props.description || props.name}</p>
       </div>
       <div className="cart-item__wrapper-buttons">
         <div className="cart-item__buttons">
