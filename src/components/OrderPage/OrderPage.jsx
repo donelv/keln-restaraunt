@@ -154,10 +154,6 @@ const OrderPage = (props) => {
             props.clearCart()
             routeChange()
           })
-          // .catch(() => {
-          //   setOpenModal(true)
-          //   setIsLoading(false)
-          // })
         } else {
           setOpenModal(true)
           setIsLoading(false)

@@ -14,7 +14,7 @@ const NavbarItem = (props) => {
         to={props.itemName}
         spy={false}
         smooth={true}
-        offset={-125}
+        offset={-135}
         duration={70}
         className={aClass}
         onClick={props.handleClick}

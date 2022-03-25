@@ -4,7 +4,7 @@ import Header from '../Header/Header'
 import CartItemContainer from '../CartItem/CartItemContainer'
 import { connect } from 'react-redux'
 import EmptyCart from '../EmptyCart/EmptyCart'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 const Cart = (props) => {
   useEffect(() => {
     window.scrollTo({
@@ -12,6 +12,7 @@ const Cart = (props) => {
       behavior: 'instant',
     })
   }, [])
+  let navigate = useNavigate()
   return (
     <div className="main">
       <div className="main-cart">
@@ -20,14 +21,20 @@ const Cart = (props) => {
         ) : (
           <>
             <CartItemContainer />
-            <div className="main-cart__button-wrapper">
+            <button
+              className="main-cart-order_button"
+              onClick={() => navigate('/cart/order')}
+            >
+              Оформление заказа
+            </button>
+            {/* <div className="main-cart__button-wrapper">
               <div className="main-cart-sum">
                 <span>Итогo: {props.sum}₽</span>
               </div>
               <button className="main-cart-order_button">
                 <Link to="/cart/order">Оформление заказа</Link>
               </button>
-            </div>
+            </div> */}
           </>
         )}
       </div>

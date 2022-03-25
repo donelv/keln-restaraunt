@@ -4,14 +4,17 @@ import { Route, Navigate, Routes } from 'react-router-dom'
 import MenuContainer from './components/Menu/MenuContainer'
 import Footer from './components/Footer/Footer'
 import OrderPage from './components/OrderPage/OrderPage'
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { getMenu } from './redux/menu-reducer'
 import { connect } from 'react-redux'
 import SuccessPage from './components/SuccessPage/SuccessPage'
 import Header from './components/Header/Header'
+import MenuLoader from './components/MenuLoader/MenuLoader'
 const App = (props) => {
-  useEffect(() => {
-    props.getMenu()
+  let [initialized, setInitialized] = useState(false)
+  useEffect(async () => {
+    await props.getMenu()
+    setInitialized(true)
   }, [])
   return (
     <>
@@ -22,7 +25,7 @@ const App = (props) => {
           element={
             <>
               <Header whatPage="Меню" />
-              <MenuContainer />
+              {initialized ? <MenuContainer /> : <MenuLoader />}
             </>
           }
         />

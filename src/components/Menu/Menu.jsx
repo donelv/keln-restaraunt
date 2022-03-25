@@ -1,7 +1,6 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import Foodcard from '../Foodcard/Foodcard'
 import './Menu.css'
-import Header from '../Header/Header'
 import Navbar from '../Navbar/Navbar'
 const Menu = (props) => {
   let res = Object.keys(props.menuItems).map((category) => {

@@ -18,18 +18,18 @@ const setMenu = (fullItem) => ({
   type: SET_MENU,
   fullItem,
 })
-export const getMenu = () => (dispatch) => {
+export const getMenu = () => async (dispatch) => {
   let obj = {
     ...categories,
   }
-  Promise.all(
+  const promise = await Promise.all(
     Object.keys(obj).map(async (cat) => {
       await getData(cat).then((data) => {
         obj[cat] = data.docs.map((doc) => ({ ...doc.data() }))
       })
     })
-  ).then(() => {
-    dispatch(setMenu(obj))
-  })
+  )
+  dispatch(setMenu(obj))
+  return promise
 }
 export default menuReducer
