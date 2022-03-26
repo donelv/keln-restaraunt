@@ -9,7 +9,7 @@ const Modal = (props) => {
         <div className="modal__body">
           <p>Доставка временно недоступна</p>
           <p className="modal_dop-info">
-            <span>ГРАФИК РАБОТЫ ДОСТАВКИ:</span>
+            <span>График работы доставки:</span>
             <b>Пн, Вт, Ср, Вс</b> | 12:00 - 23:00 <br />
             <b>Чт, Пт, Сб</b> | 12:00 - 01:00
           </p>
