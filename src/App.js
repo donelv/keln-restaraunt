@@ -25,7 +25,7 @@ const App = (props) => {
           element={
             <>
               <Header whatPage="Меню" />
-              {!initialized ? <MenuContainer /> : <MenuLoader />}
+              {initialized ? <MenuContainer /> : <MenuLoader />}
             </>
           }
         />
