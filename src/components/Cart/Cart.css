@@ -1,7 +1,7 @@
 .main {
   /* background-color: rgba(231, 203, 134, 0.5); */
   background-color: #eaeaea;
-  min-height: calc(100vh - 46.2rem);
+  min-height: calc(100vh - 33.4rem);
 }
 .main-cart {
   display: grid;
