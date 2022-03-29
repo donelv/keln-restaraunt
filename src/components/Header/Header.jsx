@@ -6,36 +6,99 @@ import cart from '../../assets/img/cart.svg'
 import search from '../../assets/img/search.svg'
 import liked from '../../assets/img/liked.svg'
 import cancel from '../../assets/img/cancel.svg'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { countSumOfTheCartAC } from '../../redux/cart-reducer'
+import ResponsiveNav from '../ResponsiveNav/ResponsiveNav'
 const Header = (props) => {
-  const [searchShow, setSearchShow] = useState(false)
+  const [navActive, setNavActive] = useState(false)
   useEffect(() => {
     props.countSumOfTheCartAC()
   }, [])
+  const handleActive = () => {
+    setNavActive(!navActive)
+  }
   return (
-    <header className="header">
-      <div className="header__wrap">
-        <div className="header__logo">
-          <Link to="/">
-            <img src={logo} alt="Кёльн" />
-          </Link>
-        </div>
-        <div className="header__logo-small">
-          <Link to="/">
-            <img src={logo_small} alt="Кёльн" />
-          </Link>
-        </div>
-        <div className="header__page">{props.whatPage}</div>
-        <div className="header__navbar">
-          <Link to="/cart">
-            <div className="header__cart">
-              <p>{props.sum > 0 && props.sum + '₽'}</p>
-              <img src={cart} alt="Корзина" />
-            </div>
-          </Link>
-          {/*<div className="header__liked">
+    <>
+      <header className="header">
+        <div className="header__wrap">
+          {/* <nav>
+          <nav className="header__navbar">
+            <Link to={'/main'} className="header__link">
+              Главная
+            </Link>
+            <Link to={'/menu'} className="header__link">
+              Меню
+            </Link>
+            <Link to={'/about'} className="header__link">
+              О нас
+            </Link>
+            <Link to={'/delivery'} className="header__link">
+              Доставка
+            </Link>
+          </nav>
+          <button
+            className={
+              navActive ? 'header_hamburger is-active' : 'header_hamburger'
+            }
+            onClick={handleActive}
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+
+          <div className="header__page">{props.whatPage}</div>
+        </nav> */}
+
+          <nav className="header-navbar">
+            <NavLink to={'/main'} className="header__link">
+              Главная
+            </NavLink>
+            <NavLink to={'/menu'} className="header__link">
+              Меню
+            </NavLink>
+            <NavLink to={'/about'} className="header__link">
+              О нас
+            </NavLink>
+            <NavLink to={'/delivery'} className="header__link">
+              Доставка
+            </NavLink>
+          </nav>
+          <div className="mobile-navbar">
+            <button
+              className={
+                navActive ? 'header_hamburger is-active' : 'header_hamburger'
+              }
+              onClick={handleActive}
+            >
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+            <div className="header__page">{props.whatPage}</div>
+          </div>
+
+          <div className="header__logo">
+            <Link to="/">
+              <img src={logo} alt="Кёльн" />
+            </Link>
+          </div>
+
+          <div className="header__logo-small">
+            <Link to="/">
+              <img src={logo_small} alt="Кёльн" />
+            </Link>
+          </div>
+
+          <div className="header__cart-wrapper">
+            <Link to="/cart">
+              <div className="header__cart">
+                <p>{props.sum > 0 && props.sum + '₽'}</p>
+                <img src={cart} alt="Корзина" />
+              </div>
+            </Link>
+            {/*<div className="header__liked">
             <img src={liked} alt="Сохранённое" />
           </div>
           <div className="header__search">
@@ -87,9 +150,29 @@ const Header = (props) => {
               </button>
             </li>
           </ul>} */}
+          </div>
         </div>
-      </div>
-    </header>
+      </header>
+      <ResponsiveNav setNavActive={setNavActive} navActive={navActive} />
+      {/* <nav
+        className={
+          navActive ? 'mobile-navbar_nav is-active' : 'mobile-navbar_nav'
+        }
+      >
+        <NavLink to={'/main'} className="header__link">
+          Главная
+        </NavLink>
+        <NavLink to={'/menu'} className="header__link">
+          Меню
+        </NavLink>
+        <NavLink to={'/about'} className="header__link">
+          О нас
+        </NavLink>
+        <NavLink to={'/delivery'} className="header__link">
+          Доставка
+        </NavLink>
+      </nav> */}
+    </>
   )
 }
 let mapStateToProps = (state) => {
