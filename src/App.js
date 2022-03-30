@@ -10,6 +10,7 @@ import { connect } from 'react-redux'
 import SuccessPage from './components/SuccessPage/SuccessPage'
 import Header from './components/Header/Header'
 import MenuLoader from './components/MenuLoader/MenuLoader'
+import MainPage from './components/MainPage/MainPage'
 const App = (props) => {
   let [initialized, setInitialized] = useState(false)
   useEffect(async () => {
@@ -20,6 +21,15 @@ const App = (props) => {
     <>
       <Routes>
         <Route exact path={'/'} element={<Navigate to={'/menu'} />} />
+        <Route
+          path={'main'}
+          element={
+            <>
+              <Header whatPage="Заказ"></Header>
+              <MainPage />
+            </>
+          }
+        />
         <Route
           path={'menu'}
           element={

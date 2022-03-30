@@ -113,7 +113,7 @@
 .mobile-navbar_nav {
   position: fixed;
   padding: 1rem;
-  transform: translateY(-100%);
+  transform: translateY(-110%);
   top: 8rem;
   z-index: 1000;
   left: 0;

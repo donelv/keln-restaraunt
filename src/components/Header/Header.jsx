@@ -76,7 +76,7 @@ const Header = (props) => {
               <span></span>
               <span></span>
             </button>
-            <div className="header__page">{props.whatPage}</div>
+            {/* <div className="header__page">{props.whatPage}</div> */}
           </div>
 
           <div className="header__logo">

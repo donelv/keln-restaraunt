@@ -1,0 +1,36 @@
+.main-page {
+  min-height: calc(100vh - 33.4rem);
+  background-color: #eaeaea;
+}
+.main-page__wrapper {
+  display: flex;
+  flex-direction: column;
+  /* padding: 2rem; */
+}
+.main-page__wrapper h1 {
+  font-family: 'Montserrat-Medium', sans-serif;
+  font-size: 2.5rem;
+  margin-left: 3rem;
+}
+.main-page__wrapper p {
+  font-family: 'Montserrat-Regular', sans-serif;
+  font-size: 1.8rem;
+  margin-left: 3rem;
+}
+.main-page__web {
+  height: 30px;
+  font-family: 'Montserrat-Medium', sans-serif;
+  font-size: 1.7rem;
+  margin-left: 3rem;
+}
+.main-page__img {
+  display: inline-block;
+  margin-left: 1.5rem;
+}
+.main-page__img img {
+  height: 20px;
+  transition: 0.4s;
+}
+.main-page__img img:hover {
+  height: 25px;
+}
