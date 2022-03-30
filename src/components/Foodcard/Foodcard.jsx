@@ -27,7 +27,7 @@ const Foodcard = (props) => {
           </span>
           <div className="foodcards-item-bottom-info-dot"></div>
           <span className="foodcards-item-bottom-info-weight">
-            {props.obj.weight}г
+            {props.obj.weight}
           </span>
         </div>
         <div className="foodcards-item-bottom-container">

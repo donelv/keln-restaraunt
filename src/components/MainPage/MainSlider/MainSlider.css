@@ -1,15 +1,18 @@
 .slick-slider {
   align-self: center;
-  width: 80%;
+  width: 100%;
 }
 .slick-slider img {
-  border-radius: 20px;
-  /* width: 100%; */
+  border-radius: 10px;
+  width: 100%;
   margin: 0 auto;
-  height: 350px;
+  /* height: 450px; */
+}
+.slick-list {
+  border-radius: 10px;
 }
 .slick-dots {
-  bottom: 8px;
+  bottom: 12px;
 }
 .slick-dots li button:before {
   color: white;
@@ -18,4 +21,14 @@
 .slick-dots li.slick-active button:before {
   opacity: 0.75;
   color: white;
+}
+.slick-next .slick-prev {
+  z-index: 2;
+}
+.slick-next {
+  right: 15px;
+}
+.slick-prev {
+  z-index: 2;
+  left: 15px;
 }

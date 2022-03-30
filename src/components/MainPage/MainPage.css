@@ -5,23 +5,29 @@
 .main-page__wrapper {
   display: flex;
   flex-direction: column;
-  /* padding: 2rem; */
+  padding: 0 5rem;
 }
 .main-page__wrapper h1 {
   font-family: 'Montserrat-Medium', sans-serif;
   font-size: 2.5rem;
-  margin-left: 3rem;
+  /* margin-left: 5rem; */
 }
 .main-page__wrapper p {
+  text-indent: 3rem;
   font-family: 'Montserrat-Regular', sans-serif;
   font-size: 1.8rem;
-  margin-left: 3rem;
+  margin: 0 2rem;
+}
+.main-page__p {
+  margin-top: 2rem;
 }
 .main-page__web {
   height: 30px;
   font-family: 'Montserrat-Medium', sans-serif;
   font-size: 1.7rem;
-  margin-left: 3rem;
+  margin: 2rem 2rem 0 2rem;
+  display: flex;
+  align-items: center;
 }
 .main-page__img {
   display: inline-block;

@@ -7,7 +7,7 @@ import OrderPage from './components/OrderPage/OrderPage'
 import React, { useEffect, useState } from 'react'
 import { getMenu } from './redux/menu-reducer'
 import { connect } from 'react-redux'
-import SuccessPage from './components/SuccessPage/SuccessPage'
+import TemplatePage from './components/TemplatePage/TemplatePage'
 import Header from './components/Header/Header'
 import MenuLoader from './components/MenuLoader/MenuLoader'
 import MainPage from './components/MainPage/MainPage'
@@ -62,11 +62,16 @@ const App = (props) => {
           }
         />
         <Route
-          path={'cart/success'}
+          path={'cart/order/success'}
           element={
             <>
               <Header whatPage="Заказ"></Header>
-              <SuccessPage />
+              <TemplatePage
+                title="Заказ подтвержден"
+                p="Ваш заказ отправлен в ресторан и скоро будет доставлен"
+                linkText="Перейти к меню"
+                link="/menu"
+              />
             </>
           }
         />
@@ -75,7 +80,12 @@ const App = (props) => {
           element={
             <>
               <Header whatPage="404"></Header>
-              <div>404 undefined</div>
+              <TemplatePage
+                title="Ошибка"
+                p="Страница не найдена"
+                linkText="Перейти на главную"
+                link="/main"
+              />
             </>
           }
         />

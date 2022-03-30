@@ -116,7 +116,7 @@ const OrderPage = (props) => {
   const [openModal, setOpenModal] = useState(false)
   let navigate = useNavigate()
   const routeChange = () => {
-    let path = `/cart/success`
+    let path = `/cart/order/success`
     navigate(path)
   }
   const submit = async (values) => {
