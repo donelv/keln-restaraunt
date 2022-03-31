@@ -19,6 +19,9 @@ const ResponsiveNav = (props) => {
       <NavLink to={'/delivery'} className="header__link">
         Доставка
       </NavLink>
+      {/* <NavLink to={'/delivery'} className="header__link">
+        График
+      </NavLink> */}
     </nav>
   )
 }

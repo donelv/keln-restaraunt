@@ -22,35 +22,6 @@ const Header = (props) => {
     <>
       <header className="header">
         <div className="header__wrap">
-          {/* <nav>
-          <nav className="header__navbar">
-            <Link to={'/main'} className="header__link">
-              Главная
-            </Link>
-            <Link to={'/menu'} className="header__link">
-              Меню
-            </Link>
-            <Link to={'/about'} className="header__link">
-              О нас
-            </Link>
-            <Link to={'/delivery'} className="header__link">
-              Доставка
-            </Link>
-          </nav>
-          <button
-            className={
-              navActive ? 'header_hamburger is-active' : 'header_hamburger'
-            }
-            onClick={handleActive}
-          >
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
-
-          <div className="header__page">{props.whatPage}</div>
-        </nav> */}
-
           <nav className="header-navbar">
             <NavLink to={'/main'} className="header__link">
               Главная
