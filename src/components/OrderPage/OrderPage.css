@@ -65,6 +65,8 @@
   box-shadow: 0rem 1rem 2rem 0.2rem #00000040;
   font-family: 'Montserrat-Regular', sans-serif;
 }
-.form__button:hover {
-  background: #333333;
+@media (hover: hover) {
+  .form__button:hover {
+    background: #333333;
+  }
 }

@@ -3,23 +3,40 @@ import { NavLink } from 'react-router-dom'
 const ResponsiveNav = (props) => {
   return (
     <nav
+      // defined={props.navActive}
       className={
         props.navActive ? 'mobile-navbar_nav is-active' : 'mobile-navbar_nav'
       }
     >
-      <NavLink to={'/main'} className="header__link">
+      <NavLink
+        to={'/main'}
+        className="header__link"
+        onClick={() => props.setNavActive(false)}
+      >
         Главная
       </NavLink>
-      <NavLink to={'/menu'} className="header__link">
+      <NavLink
+        to={'/menu'}
+        className="header__link"
+        onClick={() => props.setNavActive(false)}
+      >
         Меню
       </NavLink>
-      <NavLink to={'/about'} className="header__link">
+      <NavLink
+        to={'/about'}
+        className="header__link"
+        onClick={() => props.setNavActive(false)}
+      >
         О нас
       </NavLink>
-      <NavLink to={'/delivery'} className="header__link">
+      <NavLink
+        to={'/delivery'}
+        className="header__link"
+        onClick={() => props.setNavActive(false)}
+      >
         Доставка
       </NavLink>
-      {/* <NavLink to={'/delivery'} className="header__link">
+      {/* <NavLink to={'/delivery'} className="header__link"> 
         График
       </NavLink> */}
     </nav>

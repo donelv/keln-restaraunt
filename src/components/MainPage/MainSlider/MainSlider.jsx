@@ -16,6 +16,7 @@ export default function SimpleSlider() {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
+    arrows: false,
     pauseOnHover: true,
   }
   return (

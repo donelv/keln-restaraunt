@@ -1,16 +1,14 @@
 .slick-slider {
   align-self: center;
-  width: 100%;
+  width: calc(100vw - 2rem);
 }
 .slick-slider img {
-  border-radius: 10px;
+  /* border-radius: 10px; */
   width: 100%;
   margin: 0 auto;
   /* height: 450px; */
 }
-.slick-list {
-  border-radius: 10px;
-}
+
 .slick-dots {
   bottom: 12px;
 }

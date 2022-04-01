@@ -16,6 +16,16 @@ const Header = (props) => {
     props.countSumOfTheCartAC()
   }, [])
   const handleActive = () => {
+    let mynavs = document.getElementsByClassName('mynavbar')
+    if (navActive) {
+      for (var i = 0; i < mynavs.length; i++) {
+        mynavs.item(i).classList.remove('mob_nav__is-active')
+      }
+    } else {
+      for (var i = 0; i < mynavs.length; i++) {
+        mynavs.item(i).classList.add('mob_nav__is-active')
+      }
+    }
     setNavActive(!navActive)
   }
   return (
