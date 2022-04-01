@@ -134,7 +134,7 @@ const Header = (props) => {
           </div>
         </div>
       </header>
-      <ResponsiveNav setNavActive={setNavActive} navActive={navActive} />
+      <ResponsiveNav setNavActive={handleActive} navActive={navActive} />
       {/* <nav
         className={
           navActive ? 'mobile-navbar_nav is-active' : 'mobile-navbar_nav'
