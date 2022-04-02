@@ -74,8 +74,8 @@
     row-gap: 1rem;
   }
 }
-/* @media (max-width: 390px) {
-  .delivery-page__card {
-    width: 100%;
+@media (max-width: 569px) {
+  .delivery-page__wrapper {
+    justify-content: center;
   }
-} */
+}
