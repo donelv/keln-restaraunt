@@ -1,14 +1,27 @@
 .delivery-page {
   display: flex;
   flex-direction: column;
-  padding: 2rem 2rem 0 2rem;
+  padding: 2rem 1.5rem 0 1.5rem;
   font-size: 1.5rem;
+}
+.delivery-page__wrapper {
+  display: flex;
+  column-gap: 3rem;
+  row-gap: 3rem;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+  align-items: center;
+}
+.delivery-page__section {
+  font-family: 'Montserrat-Medium', sans-serif;
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
 }
 .delivery-page__card {
   background-color: #333333;
   color: white;
-  height: 170px;
-  width: 170px;
+  height: 16rem;
+  width: 16rem;
   border-radius: 3rem;
   box-shadow: 0rem 1rem 2rem 0.2rem rgb(0 0 0 / 25%);
   padding: 2rem;
@@ -17,28 +30,15 @@
   flex-direction: column;
   justify-content: space-around;
 }
-
-.card__dop-info {
-  font-size: 1.3rem;
-  color: grey;
-  line-height: 100%;
-}
 .delivery-page p {
   font-family: 'Montserrat-Regular', sans-serif;
   margin: 0;
   /* line-height: 100%; */
 }
-.delivery-page__wrapper {
-  display: flex;
-  column-gap: 3rem;
-  row-gap: 3rem;
-  flex-wrap: wrap;
-  margin-bottom: 3rem;
-}
-.delivery-page__section {
-  font-family: 'Montserrat-Medium', sans-serif;
-  font-size: 2.4rem;
-  margin-bottom: 10px;
+.delivery-page__time b {
+  padding: 0 1rem;
+  color: #d0a04f;
+  background-color: #333333;
 }
 .delivery-page__time {
   font-size: 1.6rem;
@@ -46,13 +46,18 @@
 }
 .card__title {
   font-family: 'Montserrat-Regular', sans-serif;
-  font-size: 2rem;
+  font-size: 1.8rem;
   color: #d0a04f;
   line-height: 100%;
 }
 .card__info {
   font-family: 'Montserrat-Medium', sans-serif;
-  font-size: 2.2rem;
+  font-size: 2rem;
+  line-height: 100%;
+}
+.card__dop-info {
+  font-size: 1.3rem;
+  color: grey;
   line-height: 100%;
 }
 
@@ -69,8 +74,8 @@
     row-gap: 1rem;
   }
 }
-@media (max-width: 390px) {
+/* @media (max-width: 390px) {
   .delivery-page__card {
     width: 100%;
   }
-}
+} */
