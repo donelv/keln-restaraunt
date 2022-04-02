@@ -39,9 +39,6 @@ const Header = (props) => {
             <NavLink to={'/menu'} className="header__link">
               Меню
             </NavLink>
-            <NavLink to={'/about'} className="header__link">
-              О нас
-            </NavLink>
             <NavLink to={'/delivery'} className="header__link">
               Доставка
             </NavLink>

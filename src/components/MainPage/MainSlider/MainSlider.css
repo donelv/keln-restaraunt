@@ -1,7 +1,7 @@
 .slick-slider {
   align-self: center;
   width: calc(100vw - 2rem);
-  overflow-y: hidden;
+  /* overflow-y: hidden; */
 }
 .slick-slider img {
   /* border-radius: 10px; */

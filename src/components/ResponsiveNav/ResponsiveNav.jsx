@@ -23,13 +23,6 @@ const ResponsiveNav = (props) => {
         Меню
       </NavLink>
       <NavLink
-        to={'/about'}
-        className="header__link"
-        onClick={() => props.setNavActive(false)}
-      >
-        О нас
-      </NavLink>
-      <NavLink
         to={'/delivery'}
         className="header__link"
         onClick={() => props.setNavActive(false)}

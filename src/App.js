@@ -11,6 +11,7 @@ import TemplatePage from './components/TemplatePage/TemplatePage'
 import Header from './components/Header/Header'
 import MenuLoader from './components/MenuLoader/MenuLoader'
 import MainPage from './components/MainPage/MainPage'
+import DeliveryPage from './components/DeliveryPage/DeliveryPage'
 const App = (props) => {
   let [initialized, setInitialized] = useState(false)
   useEffect(async () => {
@@ -20,7 +21,7 @@ const App = (props) => {
   return (
     <>
       <Routes>
-        <Route exact path={'/'} element={<Navigate to={'/menu'} />} />
+        <Route exact path={'/'} element={<Navigate to={'/main'} />} />
         <Route
           path={'main'}
           element={
@@ -36,6 +37,15 @@ const App = (props) => {
             <>
               <Header whatPage="Меню" />
               {initialized ? <MenuContainer /> : <MenuLoader />}
+            </>
+          }
+        />
+        <Route
+          path={'delivery'}
+          element={
+            <>
+              <Header whatPage="Доставка" />
+              {<DeliveryPage />}
             </>
           }
         />
@@ -68,7 +78,7 @@ const App = (props) => {
               <Header whatPage="Заказ"></Header>
               <TemplatePage
                 title="Заказ подтвержден"
-                p="Ваш заказ отправлен в ресторан и скоро будет доставлен"
+                p={`Ваш заказ отправлен в ресторан. В течение 15 минут с Вами свяжется администратор`}
                 linkText="Перейти к меню"
                 link="/menu"
               />
