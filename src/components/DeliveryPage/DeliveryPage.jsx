@@ -1,9 +1,15 @@
+import { useEffect } from 'react'
 import './DeliveryPage.css'
 const DeliveryPage = () => {
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'instant',
+    })
+  }, [])
   return (
     <div className="main">
       <div className="delivery-page">
-        {/* <h1>Доставка</h1> */}
         <div className="delivery-page__section">График работы</div>
         <p className="delivery-page__time">
           <b>Пн, Вт, Ср, Вс</b> | 12:00 - 23:00 <br />

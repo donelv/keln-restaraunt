@@ -66,7 +66,10 @@ const PhoneInput = ({ field, form, ...props }) => {
       if (inputNumbersValue[0] == '9') {
         inputNumbersValue = '7' + inputNumbersValue
       }
-      let firstSymbols = inputNumbersValue[0] == '8' ? '8' : '+7'
+      // let firstSymbols = inputNumbersValue[0] == '8' ? '8' : '+7'
+      // let firstSymbols = inputNumbersValue[0] == '8' ? '+7' : '+7'
+      // let firstSymbols = inputNumbersValue[0] == '8' && '+7'
+      let firstSymbols = '+7'
       formattedInputValue = input.value = firstSymbols + ' '
       if (inputNumbersValue.length > 1) {
         formattedInputValue += '(' + inputNumbersValue.substring(1, 4)
@@ -82,7 +85,8 @@ const PhoneInput = ({ field, form, ...props }) => {
       }
       //Russian number
     } else {
-      formattedInputValue = '+' + inputNumbersValue.substring(0, 16)
+      return props.setFieldValue('phone', '')
+      // formattedInputValue = '+' + inputNumbersValue.substring(0, 16)
       // Not Russian number
     }
     props.setFieldValue('phone', formattedInputValue)
@@ -131,8 +135,6 @@ const OrderPage = (props) => {
           .slice(0, data.date_time_txt.search(','))
           .toLowerCase()
         let currentHour = parseInt(data.time_24.slice(0, 2), 10)
-        day = 'friday'
-        currentHour = 14
         if (day.match(/^(friday|saturday|sunday)$/) && currentHour < 1) {
         } else if (
           day.match(/^(monday|tuesday|wednesday|sunday)$/) &&

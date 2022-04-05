@@ -16,16 +16,6 @@ const Header = (props) => {
     props.countSumOfTheCartAC()
   }, [])
   const handleActive = () => {
-    // let mynavs = document.getElementsByClassName('mynavbar')
-    // if (navActive) {
-    //   for (var i = 0; i < mynavs.length; i++) {
-    //     mynavs.item(i).classList.remove('mob_nav__is-active')
-    //   }
-    // } else {
-    //   for (var i = 0; i < mynavs.length; i++) {
-    //     mynavs.item(i).classList.add('mob_nav__is-active')
-    //   }
-    // }
     const navList = document.querySelectorAll('.mynavbar')
     navActive
       ? navList.forEach((item) => {
@@ -62,7 +52,6 @@ const Header = (props) => {
               <span></span>
               <span></span>
             </button>
-            {/* <div className="header__page">{props.whatPage}</div> */}
           </div>
 
           <div className="header__logo">
@@ -78,86 +67,16 @@ const Header = (props) => {
           </div>
 
           <div className="header__cart-wrapper">
-            <Link to="/cart">
-              <div className="header__cart">
+            <div className="header__cart">
+              <Link to="/cart">
                 <p>{props.sum > 0 && props.sum + '₽'}</p>
                 <img src={cart} alt="Корзина" />
-              </div>
-            </Link>
-            {/*<div className="header__liked">
-            <img src={liked} alt="Сохранённое" />
-          </div>
-          <div className="header__search">
-            <img src={search} alt="Поиск" />
-          </div>/*}
-          
-          {/* {<ul className="search">
-            {!searchShow && (
-              <li className="cart">
-                <Link to="/cart">
-                  <p className="header-nav-li-price">
-                    {props.sum > 0 && props.sum + '₽'}
-                  </p>
-                  <button className="search-form-button">
-                    <img src={cart} alt="Корзина" />
-                  </button>
-                </Link>
-              </li>
-            )}
-
-            {!searchShow && (
-              <li className="liked">
-                <button className="search-form-button">
-                  <img src={liked} alt="Сохранённое" />
-                </button>
-              </li>
-            )}
-            {searchShow && (
-              <li>
-                <input
-                  className="search-form-input"
-                  type="text"
-                  name="search"
-                  placeholder="Найти"
-                  autoComplete="off"
-                />
-                <button class="search-form-cancel">
-                  <img src={cancel} alt="Закрыть" />
-                </button>
-              </li>
-            )}
-            <li>
-              <button
-                className="search-form-button"
-                onClick={() => setSearchShow(!searchShow)}
-                onBlur={() => setSearchShow(!searchShow)}
-              >
-                <img src={search} alt="Поиск" />
-              </button>
-            </li>
-          </ul>} */}
+              </Link>
+            </div>
           </div>
         </div>
       </header>
       <ResponsiveNav setNavActive={handleActive} navActive={navActive} />
-      {/* <nav
-        className={
-          navActive ? 'mobile-navbar_nav is-active' : 'mobile-navbar_nav'
-        }
-      >
-        <NavLink to={'/main'} className="header__link">
-          Главная
-        </NavLink>
-        <NavLink to={'/menu'} className="header__link">
-          Меню
-        </NavLink>
-        <NavLink to={'/about'} className="header__link">
-          О нас
-        </NavLink>
-        <NavLink to={'/delivery'} className="header__link">
-          Доставка
-        </NavLink>
-      </nav> */}
     </>
   )
 }
