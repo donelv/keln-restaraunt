@@ -131,6 +131,8 @@ const OrderPage = (props) => {
           .slice(0, data.date_time_txt.search(','))
           .toLowerCase()
         let currentHour = parseInt(data.time_24.slice(0, 2), 10)
+        day = 'friday'
+        currentHour = 14
         if (day.match(/^(friday|saturday|sunday)$/) && currentHour < 1) {
         } else if (
           day.match(/^(monday|tuesday|wednesday|sunday)$/) &&

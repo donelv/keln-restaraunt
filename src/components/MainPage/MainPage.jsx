@@ -13,9 +13,7 @@ const MainPage = () => {
   return (
     <div className="main-page">
       <div className="main-page__wrapper">
-        <h1>
-          Пивной Двор <span>"Кёльн"</span>
-        </h1>
+        <h1>Пивной Двор "Кёльн"</h1>
         <MainSlider />
         <div className="main-page__p">
           <p>
